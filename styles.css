@@ -9,7 +9,7 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-    border: 1px solid greenyellow;
+    /* border: 1px solid greenyellow; */
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -55,10 +55,23 @@ header {
   justify-content: space-around;
 }
 
+.accomplish {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-left: 10%
+}
+
 .minutes, .seconds {
   display: flex;
   flex-direction: column;
   padding: 1vh;
+}
+
+.user-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #CBC9CF
 }
 
 .start-activity {
