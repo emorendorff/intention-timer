@@ -9,7 +9,7 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-    /* border: 1px solid greenyellow; */
+    border: 1px solid greenyellow;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -37,8 +37,34 @@ header {
 .grey-box {
   background-color: #46424D;
   width: 95%;
-  height: 80%;
+  height: 85%;
   padding: 2vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  align-self: center;
+}
+
+.just-in-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.minutes, .seconds {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+}
+
+.start-activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .new-activity-form {
@@ -48,6 +74,7 @@ header {
 
 .new-activity-form h2 {
   margin-bottom: 1.5vh;
+  margin-top: 1.5vh;
 }
 
 .past-activities {
@@ -63,7 +90,8 @@ header {
   margin-top: 3vh;
 }
 .category h3 {
-  padding-top: 5vh;
+  /* padding-top:  */
+  padding-bottom: 1.5vh;
 }
 
 .select-category {
