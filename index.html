@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Intention Timer</title>
 </head>
 <body>
+    <header>INTENTION TIMER</header>
+    <main>
+        <section class="activity-form">
+            <button></button>
+            <button></button>
+            <button></button>
+            <form>
+                <!-- Make sure to check name attribute on text-inputs -->
+                <label for="description">What would you like to accomplish during this time?</label><br>
+                <input type="text" id="description" name="description"><br>
+                <label for="minutes">Minutes</label><br>
+                <input type="text" id="minutes" name="minutes"><br>
+                <label for="seconds">Seconds</label><br>
+                <input type="text" id="seconds" name="seconds"><br>
+                <input type="submit" value="Start Activity">
+            </form>
+        </section>
+    </main>
+    <aside></aside>
     
 </body>
 </html>

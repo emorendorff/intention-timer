@@ -9,7 +9,25 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-    border: solid red 1px;
+    /* border: 1px solid red; */
     margin: 0;
-    
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    background-color: #2B2733;
+    color: #CBC9CF;
+    height: 90vh;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    background-color: #46424D;
+    color: #FFF;
+    font-size: 3rem;
+    height: 10vh;
 }
