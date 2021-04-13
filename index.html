@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Intention Timer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Intention Timer</title>
 </head>
+
 <body>
-    <header>INTENTION TIMER</header>
-    <main>
-        <section class="new-activity-form">
-            <h2>New Activity</h2>
-            <button></button>
-            <button></button>
-            <button></button>
-            <form>
-                <!-- Make sure to check name attribute on text-inputs -->
-                <label for="description">What would you like to accomplish during this time?</label><br>
-                <input type="text" id="description" name="description"><br>
-                <label for="minutes">Minutes</label><br>
-                <input type="text" id="minutes" name="minutes"><br>
-                <label for="seconds">Seconds</label><br>
-                <input type="text" id="seconds" name="seconds"><br><br>
-                <input type="submit" value="Start Activity">
-            </form>
+  <header>INTENTION TIMER</header>
+  <main>
+    <section class="new-activity-form">
+      <h2>New Activity</h2>
+      <div class="grey-box">
+        <div class="form-container">
+        <section class="category">
+          <h3>Select a category:</h3>
         </section>
-        <section class="past-activities">
-            <aside>
-                <h2>Past Activities</h2>
-            </aside>
+        <section class="select-category">
+          <button>Study</button>
+          <button>Meditate</button>
+          <button>Excercise</button>
         </section>
-        
-    </main>
-    
-    
+        <form>
+          <!-- Make sure to check name attribute on text-inputs -->
+          <div class="accomplish">
+          <label for="description">What would you like to accomplish during this time?</label>
+          <input type="text" class="user-input" id="description" name="description">
+        </div>
+          <div class="just-in-time">
+            <div class="minutes">
+            <label for="minutes">Minutes</label>
+            <input type="text" class="user-input" id="minutes" name="minutes">
+            </div>
+            <div class="seconds">
+            <label for="seconds">Seconds</label>
+            <input type="text" class="user-input"id="seconds" name="seconds">
+          </div>
+          </div>
+          <div class="start-activity">
+            <input type="submit" value="Start Activity">
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>
+    <section class="past-activities">
+      <aside>
+        <h2>Past Activities</h2>
+      </aside>
+    </section>
+
+  </main>
+
+
 </body>
+
 </html>
