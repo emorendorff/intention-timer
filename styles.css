@@ -135,20 +135,21 @@ input[type="submit"] {
   height: 10vh;
 }
 
+/* look into pseudoproperties - wont be :hover,
+this will likely just be .study-btn-active
+class seclector with same props, diff url which
+will be triggered to change with js */
+
 .study-btn {
-  border: 1px solid white;
+  border: 1px solid #CBC9CF;
   background: url("assets/study.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
-/* look into pseudoproperties - wont be :hover,
-this will likely just be .study-btn-active
-class seclector with same props, diff url which
-will be triggered to change with js */
 .study-btn:hover {
-  border: 1px solid white;
+  border: 1px solid #CBC9CF;
   background: url("assets/study-active.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -156,14 +157,14 @@ will be triggered to change with js */
 }
 
 .meditate-btn {
-  border: 1px solid white;
+  border: 1px solid #CBC9CF;
   background: url("assets/meditate.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 .meditate-btn:hover {
-  border: 1px solid white;
+  border: 1px solid #CBC9CF;
   background: url("assets/meditate-active.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -171,7 +172,7 @@ will be triggered to change with js */
 }
 
 .exercise-btn {
-  border: 1px solid white;
+  border: 1px solid #CBC9CF;
   background: url("assets/exercise.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -179,7 +180,7 @@ will be triggered to change with js */
 }
 
 .exercise-btn:hover {
-  border: 1px solid white;
+  border: 1px solid #CBC9CF;
   background: url("assets/exercise-active.svg");
   background-repeat: no-repeat;
   background-position: center;
