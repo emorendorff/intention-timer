@@ -129,19 +129,60 @@ input[type="submit"] {
     width: 14vw;
 }
 
-/* .study-btn, .meditate-btn, .exercise-btn {
-  /* display: none;
-  /* border: 10px solid salmon;
-  height: 30vh;
-  width: 30vw; 
-  background:url(./assets/study.svg);
- 
-} */
-/* 
-button {
-  
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    opacity: 0.5;
-} */
+.category-btn {
+  border-radius: 5px;
+  width: 13vw;
+  height: 10vh;
+}
+
+/* look into pseudoproperties - wont be :hover,
+this will likely just be .study-btn-active
+class seclector with same props, diff url which
+will be triggered to change with js */
+
+.study-btn {
+  border: 1px solid #CBC9CF;
+  background: url("assets/study.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.study-btn:hover {
+  border: 1px solid #CBC9CF;
+  background: url("assets/study-active.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.meditate-btn {
+  border: 1px solid #CBC9CF;
+  background: url("assets/meditate.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.meditate-btn:hover {
+  border: 1px solid #CBC9CF;
+  background: url("assets/meditate-active.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.exercise-btn {
+  border: 1px solid #CBC9CF;
+  background: url("assets/exercise.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.exercise-btn:hover {
+  border: 1px solid #CBC9CF;
+  background: url("assets/exercise-active.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
