@@ -39,27 +39,35 @@ header {
   width: 95%;
   height: 85%;
   padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  align-self: center;
+  justify-content: space-evenly;
+  align-self: auto;
 }
 
 .just-in-time {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .accomplish {
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  padding-left: 10%
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.accomplish-input {
+    width: 47.5vw;
 }
 
 .minutes, .seconds {
@@ -78,6 +86,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  padding-top: 8vh;
 }
 
 .new-activity-form {
@@ -97,12 +106,13 @@ header {
     width: 34vw;
 }
 
-.category {
+.category-with-button {
   display: flex;
-  flex-direction: row;
-  margin-top: 3vh;
+  flex-direction: column;
 }
-.category h3 {
+
+
+.category-with-button h3 {
   /* padding-top:  */
   padding-bottom: 1.5vh;
 }
@@ -110,7 +120,7 @@ header {
 .select-category {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 input[type="submit"] {
@@ -118,3 +128,20 @@ input[type="submit"] {
     margin-left: 14vw;
     width: 14vw;
 }
+
+/* .study-btn, .meditate-btn, .exercise-btn {
+  /* display: none;
+  /* border: 10px solid salmon;
+  height: 30vh;
+  width: 30vw; 
+  background:url(./assets/study.svg);
+ 
+} */
+/* 
+button {
+  
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+} */
