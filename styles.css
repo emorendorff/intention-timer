@@ -134,6 +134,15 @@ input[type="submit"] {
   width: 13vw;
   height: 10vh;
 }
+
+.study-btn {
+  border: 1px solid white;
+  background: url("assets/study.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 /* look into pseudoproperties - wont be :hover,
 this will likely just be .study-btn-active
 class seclector with same props, diff url which
