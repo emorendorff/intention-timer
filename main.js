@@ -3,13 +3,21 @@ var inputBoxMinutes = document.getElementById('minutes');
 var inputBoxSeconds = document.getElementById('seconds');
 
 // DOM Vars
-var categoryBtns = document.querySelectorAll('.category-btn');
+var studyBtn = document.getElementById('studyBtn');
+var meditateBtn = document.getElementById('meditateBtn');
+var exerciseBtn = document.getElementById('exerciseBtn');
+
 
 //Event Listeners
-categoryBtns.addEventListener('click', toggleCatBtn);
+studyBtn.addEventListener('click', toggleCatBtn);
+meditateBtn.addEventListener('click', toggleCatBtn);
+exerciseBtn.addEventListener('click', toggleCatBtn);
+
 
 
 // Event Handlers
+
+//dummy functions for hide/unhide html elements
 function hideElement(element) {
   element.classList.add('hidden');
 }
