@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="Activity.js" type="text/javascript" defer></script>
+    <script src="main.js" type="text/javascript" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +19,28 @@
         <section class="new-activity-form">
             <h2>New Activity</h2>
             <div class="grey-box">
+                <section class="timer-section hidden">
+                  <div class="deep-timer hidden">
+                    <h3 class="activity-description hidden">Placeholder</h3>
+                    <p class="countdown hidden">number</p>
+                  </div>
+                  <div class="circle-div hidden">
+                    <p class="start-complete hidden">Start</p>
+                  </div>
+                  <div class="log-activity hidden">
+                    <button type="submit" class="log-button hidden">Log Activity</button>
+                  </div>
+                </section>
                 <div class="form-container">
                     <section class="category-with-button">
                             <h3>Select a category:</h3>
                         <section class="select-category">
                             <!-- <button class="study-btn">Study</button> -->
-                            <input type="button" class="study-btn category-btn" value="">
+                            <input type="button" class="study-btn category-btn" id="studyBtn" value="">
                             <!-- <button class="meditate-btn">Meditate</button> -->
-                            <input type="button" class="meditate-btn category-btn" value="">
+                            <input type="button" class="meditate-btn meditate-btn-active category-btn" id="meditateBtn" value="">
                             <!-- <button class="exercise-btn">Exercise</button> -->
-                            <input type="button" class="exercise-btn category-btn" value="">
+                            <input type="button" class="exercise-btn exercuse-btn-active category-btn" id="exerciseBtn" value="">
                         </section>
                     </section>
                     <form>
@@ -34,15 +48,18 @@
                         <div class="accomplish">
                             <label for="description">What would you like to accomplish during this time?</label>
                             <input type="text" class="user-input accomplish-input" id="description" name="description">
+                            <p class="require hidden">A description is required.</p>
                         </div>
                         <div class="just-in-time">
                             <div class="minutes">
-                                <label for="minutes">Minutes</label>
-                                <input type="text" class="user-input" id="minutes" name="minutes">
+                                <label for="minutes">Minutes (0-59)</label>
+                                <input type="number" class="user-input" id="minutes" name="minutes" min="0" max="59">
+                                <p class="require hidden">Minutes are required.</p>
                             </div>
                             <div class="seconds">
                                 <label for="seconds">Seconds</label>
-                                <input type="text" class="user-input" id="seconds" name="seconds">
+                                <input type="number" class="user-input" id="seconds" name="seconds" min="0" max="59">
+                                <p class="require hidden">Seconds are required.</p>
                             </div>
                         </div>
                         <div class="start-activity">
