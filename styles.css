@@ -148,7 +148,7 @@ will be triggered to change with js */
   background-size: contain;
 }
 
-.study-btn:hover {
+.study-btn-active {
   border: 1px solid #CBC9CF;
   background: url("assets/study-active.svg");
   background-repeat: no-repeat;
@@ -163,7 +163,7 @@ will be triggered to change with js */
   background-position: center;
   background-size: contain;
 }
-.meditate-btn:hover {
+.meditate-btn-active {
   border: 1px solid #CBC9CF;
   background: url("assets/meditate-active.svg");
   background-repeat: no-repeat;
@@ -179,7 +179,7 @@ will be triggered to change with js */
   background-size: contain;
 }
 
-.exercise-btn:hover {
+.exercise-btn-active {
   border: 1px solid #CBC9CF;
   background: url("assets/exercise-active.svg");
   background-repeat: no-repeat;
