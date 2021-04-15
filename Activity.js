@@ -1,32 +1,29 @@
-Class Activity {
+class Activity {
     constructor(activityCat, descriptionInput, minutesInput, secondsInput){
         this.category = activityCat;
         this.description = descriptionInput;
         this.minutes = minutesInput;
         this.seconds = secondsInput;
     }
-      }
-    startTimer() {
-      var userStartTime = (this.minutes * 60) + (this.seconds);
-
-      // Update the count down every 1 second
-      var x = setInterval(function() {
-
-        // Get today's date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        var timeDifference = userStartTime - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-    markComplete() {
-    }
-    saveToStorage() {
-    }
-}
+  }
+//     startTimer() {
+//       var userStartTime = (this.minutes * 60) + (this.seconds);
+//       // Update the count down every 1 second
+//       var x = setInterval(function() {
+//         // Get today's date and time
+//         var now = new Date().getTime();
+//         // Find the distance between now and the count down date
+//         var timeDifference = userStartTime - now;
+//         // Time calculations for days, hours, minutes and seconds
+//         var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+//         var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+//
+//     markComplete() {
+//     }
+//     saveToStorage() {
+//     }
+//   }
+// }
 // <!-- Display the countdown timer in an element -->
 // <p id="demo"></p>
 //

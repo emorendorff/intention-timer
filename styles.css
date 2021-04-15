@@ -186,6 +186,7 @@ will be triggered to change with js */
   background-position: center;
   background-size: contain;
 }
+
 .hidden {
   display: none;
 }
