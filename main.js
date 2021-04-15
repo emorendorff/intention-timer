@@ -8,6 +8,7 @@ var inputBoxSeconds = document.getElementById('seconds');
 var descriptionError = document.getElementById('descriptionError');
 var secondsError = document.getElementById('secondsError');
 var minutesError = document.getElementById('minutesError');
+var categoryError = document.getElementById('categoryError')
 var fullError = document.getElementById('fullError');
 
 // buttons
@@ -16,12 +17,22 @@ var meditateBtn = document.getElementById('meditateBtn');
 var exerciseBtn = document.getElementById('exerciseBtn');
 var submitBtn = document.getElementById('submit');
 
+var categoryBtns = document.querySelectorAll('.category-btn');
+
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
-submitBtn.addEventListener('click', checkFormFilled);
+submitBtn.addEventListener('click', function(e) {
+  e.preventDefault()
+//checkFormFilled();
+checkCategoryButtons();
+checkInputsFilled();
+
+
+
+});
 
 // Global
 currentActivity = {};
@@ -29,13 +40,44 @@ pastActivities = [];
 
 // Event Handlers
 
-function checkFormFilled(e){
-e.preventDefault();
-  if (!inputBoxDescription.value || !inputBoxMinutes.value || !inputBoxSeconds.value) {
-    console.log(e)
+function checkFormFilled() {
+  if (!checkInputsFilled() || !checkCategoryButtons()) {
+    hideElement(categoryError);
+    hideElement(descriptionError);
+    showElement(fullError);
+  } else {
+    hideElement(fullError);
   }
 }
-
+//checked
+function checkInputsFilled() {
+  if (!inputBoxDescription.value) {
+    showElement(descriptionError)
+  } else if (!inputBoxMinutes.value) {
+    showElement(minutesError)
+  } else if (!inputBoxSeconds.value) {
+    showElement(secondsError)
+  } else {
+    hideElement(descriptionError)
+    hideElement(minutesError)
+    hideElement(secondsError)
+    return true;
+  }
+}
+//checked
+function checkCategoryButtons() {
+  var isCatButtonChecked = false;
+  for (var i = 0; i < categoryBtns.length; i++) {
+    if (categoryBtns[i].disabled) {
+      isCatButtonChecked = true;
+      hideElement(categoryError)
+    }
+  }
+  if (!isCatButtonChecked) {
+    showElement(categoryError);
+  }
+  return isCatButtonChecked;
+}
 
 function toggleCatBtn() {
   if (event.target.id === 'studyBtn') {
@@ -85,13 +127,13 @@ function toggleElement(element) {
   element.classList.toggle('hidden');
 }
 //
-// function hideElement(element) {
-//   element.classList.add('hidden');
-// }
+function hideElement(element) {
+  element.classList.add('hidden');
+}
 //
-// function showElement(element) {
-//   element.classList.remove('hidden');
-// }
+function showElement(element) {
+  element.classList.remove('hidden');
+}
 
 // Display the result in the element with id="demo"
 //add Query selectors next for shayan and shayan only :)
