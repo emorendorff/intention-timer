@@ -19,7 +19,9 @@ var submitBtn = document.getElementById('submit');
 var categoryBtns = document.querySelectorAll('.category-btn');
 
 // screen areas
-var timerArea = document.queryselector('timerSection');
+var timerArea = document.querySelector('#timerSection');
+var formArea = document.querySelector('.form-container');
+var activityArea = document.querySelector('.activity-text')
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
@@ -64,6 +66,9 @@ function validateForm(e){
        currentActivity =
        new Activity(checkActiveCategory(), inputBoxDescription.value,
         inputBoxMinutes.value ,inputBoxSeconds.values);
+        hideElement(formArea);
+        activityArea.innerText = 'Current Activity';
+  
     }
   }
 }
