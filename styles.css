@@ -216,8 +216,9 @@ will be triggered to change with js */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 5vw;
+  padding-left: 3vw;
   align-items: center;
+  font-size: 1.5em;
 }
 
 .timer-numbers {
