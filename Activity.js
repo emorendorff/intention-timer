@@ -6,7 +6,7 @@ class Activity {
       this.seconds = secondsInput;
   }
   //methods
-  startTimer(){
+  startTimer() {
   const startingMinutes = this.minutes;
   var time = startingMinutes * 60;
 
@@ -23,22 +23,14 @@ class Activity {
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
     //USE THE QUERY SELECtor from above to manipulate it's innerHTML
+    timerArea.innerHTML = `<p>${this.minutes}:${this.seconds}</p>`;
     //queryselector.innerHTML = `${minutes}:${seconds}`;
     time--;
-  }
-
-
-
-
-
+   }
   }
 
   markComplete(){}
 
   saveToStorage(){}
 
-
-
-
-
-}
+};

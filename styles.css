@@ -188,8 +188,8 @@ will be triggered to change with js */
 }
 
 .timer-section {
- height: 25px;
- width: 25px;
+ height: 300px;
+ width: 300px;
  background-color: red;
  border-radius: 50%;
  display: inline-block;

@@ -19,7 +19,7 @@ var submitBtn = document.getElementById('submit');
 var categoryBtns = document.querySelectorAll('.category-btn');
 
 // screen areas
-var timerArea = document.getElementById(timerSection);
+var timerArea = document.queryselector('timerSection');
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
