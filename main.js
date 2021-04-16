@@ -16,9 +16,10 @@ var studyBtn = document.getElementById('studyBtn');
 var meditateBtn = document.getElementById('meditateBtn');
 var exerciseBtn = document.getElementById('exerciseBtn');
 var submitBtn = document.getElementById('submit');
-
 var categoryBtns = document.querySelectorAll('.category-btn');
 
+// screen areas
+var timerArea = document.getElementById(timerSection);
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
@@ -168,6 +169,8 @@ function hideElement(element) {
 function showElement(element) {
   element.classList.remove('hidden');
 }
+
+
 
 // Display the result in the element with id="demo"
 //add Query selectors next for shayan and shayan only :)
