@@ -33,6 +33,16 @@ header {
     font-size: 3rem;
     height: 10vh;
 }
+.grey-box-timer {
+  background-color: #46424D;
+  width: 95%;
+  height: 85%;
+  padding: 2vh;
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center;
+  align-self: center; */
+}
 
 .grey-box {
   background-color: #46424D;
@@ -44,6 +54,7 @@ header {
   justify-content: center;
   align-self: center;
 }
+
 
 .form-container {
   display: flex;
@@ -190,9 +201,23 @@ will be triggered to change with js */
 .timer-section {
  height: 300px;
  width: 300px;
- background-color: red;
+ border: 5px solid #fc8e88;
+ background-color: transparent;
  border-radius: 50%;
  display: inline-block;
+}
+
+.time-section > p, h3 {
+  padding: 10vh;
+}
+
+.timer-area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-around;
+  height: 50vh
+  background-color: white
 }
 
 .hidden {

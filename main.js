@@ -17,11 +17,13 @@ var meditateBtn = document.getElementById('meditateBtn');
 var exerciseBtn = document.getElementById('exerciseBtn');
 var submitBtn = document.getElementById('submit');
 var categoryBtns = document.querySelectorAll('.category-btn');
+var logBtn = document.getElementById('.log-button')
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
 var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
+var greyBoxTimer = document.querySelector('.grey-box');
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
@@ -67,7 +69,9 @@ function validateForm(e){
        new Activity(checkActiveCategory(), inputBoxDescription.value,
         inputBoxMinutes.value ,inputBoxSeconds.values);
         hideElement(formArea);
+        greyBoxTimer.classList.add('.grey-box-timer');
         activityArea.innerText = 'Current Activity';
+
         showElement(timerArea);
     }
   }
@@ -175,7 +179,13 @@ function showElement(element) {
   element.classList.remove('hidden');
 }
 
+//ems eyes and ems eyes only
+//create a function with 3 if statements that is within the submit event handler
+//function colorTimer() {
+// if(studyBtn.checked) {
 
+//}
+//}
 
 // Display the result in the element with id="demo"
 //add Query selectors next for shayan and shayan only :)
