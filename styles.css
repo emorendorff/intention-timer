@@ -187,6 +187,14 @@ will be triggered to change with js */
   background-size: contain;
 }
 
+.timer-section {
+ height: 300px;
+ width: 300px;
+ background-color: red;
+ border-radius: 50%;
+ display: inline-block;
+}
+
 .hidden {
   display: none;
 }
