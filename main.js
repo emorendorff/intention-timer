@@ -68,7 +68,7 @@ function validateForm(e){
         inputBoxMinutes.value ,inputBoxSeconds.values);
         hideElement(formArea);
         activityArea.innerText = 'Current Activity';
-  
+        showElement(timerArea);
     }
   }
 }
