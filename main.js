@@ -24,15 +24,17 @@ var categoryBtns = document.querySelectorAll('.category-btn');
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
-submitBtn.addEventListener('click', function(e) {
-  e.preventDefault()
-//checkFormFilled();
-checkCategoryButtons();
-checkInputsFilled();
+submitBtn.addEventListener('click', validateForm);
 
-
-
-});
+// function(e) {
+//   e.preventDefault()
+// //checkFormFilled();
+// checkCategoryButtons();
+// checkInputsFilled();
+//
+//
+//
+// });
 
 // Global
 currentActivity = {};
@@ -40,16 +42,31 @@ pastActivities = [];
 
 // Event Handlers
 
-function checkFormFilled() {
-  if (!checkInputsFilled() || !checkCategoryButtons()) {
-    hideElement(categoryError);
-    hideElement(descriptionError);
-    showElement(fullError);
-  } else {
-    hideElement(fullError);
+// function checkFormFilled() {
+//   if (!checkInputsFilled() || !checkCategoryButtons()) {
+//     hideElement(categoryError);
+//     hideElement(descriptionError);
+//     showElement(fullError);
+//   } else {
+//     hideElement(fullError);
+//   }
+// }
+//checked
+
+function validateForm(e){
+  e.preventDefault();
+  var checkedButtons = checkCategoryButtons();
+  var checkedInputs = checkInputsFilled();
+
+  if(checkedButtons){
+    if (checkedInputs) {
+       currentActivity =
+       new Activity(checkActiveCategory(), inputBoxDescription.value,
+        inputBoxMinutes.value ,inputBoxSeconds.values);
+    }
   }
 }
-//checked
+
 function checkInputsFilled() {
   if (!inputBoxDescription.value) {
     showElement(descriptionError)
@@ -77,6 +94,23 @@ function checkCategoryButtons() {
     showElement(categoryError);
   }
   return isCatButtonChecked;
+}
+
+function checkActiveCategory(){
+var activeIndex;
+  for (var i = 0; i < categoryBtns.length; i++) {
+    if (!categoryBtns[i].disabled) {
+      activeIndex = i;
+
+    }
+  }
+  if (activeIndex === 0) {
+    return 'Study'
+  } else if (activeIndex === 1) {
+    return 'Meditate'
+  } else if (activeIndex === 2) {
+    return 'Exercise'
+  }
 }
 
 function toggleCatBtn() {
