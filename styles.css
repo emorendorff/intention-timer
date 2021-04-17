@@ -30,7 +30,7 @@ header {
     align-items: center;
     background-color: #46424D;
     color: #FFF;
-    font-size: 3rem;
+    font-size: 2.5rem;
     height: 10vh;
 }
 
@@ -197,6 +197,10 @@ will be triggered to change with js */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.start-btn {
+  background-color: white;
 }
 
 .timer-section {
