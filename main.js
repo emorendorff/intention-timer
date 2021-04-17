@@ -21,7 +21,10 @@ var logBtn = document.querySelector('.log-button')
 
 var countDownArea = document.querySelector('.countdown');
 
-var startArea = document.getElementById('start-area')
+var startComplete = document.querySelector('#startComplete');
+var activityDescText = document.querySelector('#activeDesc')
+//var startArea = document.getElementById('start-area')
+
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
@@ -40,16 +43,10 @@ meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
 logBtn.addEventListener('click', renderPastActivities);
-
-// function(e) {
-//   e.preventDefault()
-// //checkFormFilled();
-// checkCategoryButtons();
-// checkInputsFilled();
-//
-//
-//
-// });
+startComplete.addEventListener('click', function(e){
+  e.preventDefault();
+  currentActivity.startTimer()
+});
 
 // Global
 currentActivity = {};
@@ -96,16 +93,22 @@ function validateForm(e){
 
   if(checkedButtons){
     if (checkedInputs) {
-       currentActivity =
-       new Activity(checkActiveCategory(), inputBoxDescription.value,
-        parseInt(inputBoxMinutes.value), parseInt(inputBoxSeconds.value));
-        hideElement(formArea);
-        greyBoxTimer.classList.add('.grey-box-timer');
-        activityArea.innerText = 'Current Activity';
-        showElement(timerArea);
-        currentActivity.startTimer();
+        createNewActivity();
+        setupClock();
     }
   }
+}
+
+function createNewActivity() {
+  currentActivity = new Activity(checkActiveCategory(), inputBoxDescription.value,
+   parseInt(inputBoxMinutes.value), parseInt(inputBoxSeconds.value));
+}
+
+function setupClock() {
+  hideElement(formArea);
+  greyBoxTimer.classList.add('.grey-box-timer');
+  activityArea.innerText = 'Current Activity';
+  showElement(timerArea);
 }
 
 function checkInputsFilled() {
@@ -142,7 +145,6 @@ var activeIndex;
   for (var i = 0; i < categoryBtns.length; i++) {
     if (!categoryBtns[i].disabled) {
       activeIndex = i;
-
     }
   }
   if (activeIndex === 0) {
@@ -174,7 +176,6 @@ function activateDeactivate(btn1, btn2) {
 
 
 //Validating input from minutes and seconds input  boxes
-
 inputBoxMinutes.addEventListener("input", function() {
   this.value = this.value.replace(/[e\+\-]/gi, "");
 });
@@ -201,11 +202,11 @@ inputBoxSeconds.addEventListener("keydown", function(e) {
 function toggleElement(element) {
   element.classList.toggle('hidden');
 }
-//
+
 function hideElement(element) {
   element.classList.add('hidden');
 }
-//
+
 function showElement(element) {
   element.classList.remove('hidden');
 }
@@ -247,15 +248,3 @@ function showElement(element) {
 
 //}
 //}
-
-// Display the result in the element with id="demo"
-//add Query selectors next for shayan and shayan only :)
-
-// document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-// + minutes + "m " + seconds + "s ";
-
-// If the count down is finished, write some text
-// if (timeDifference < 0) {
-//   clearInterval(x);
-//   document.getElementById("demo").innerHTML = "EXPIRED";
-// }
