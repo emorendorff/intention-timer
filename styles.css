@@ -147,6 +147,30 @@ input[type="submit"] {
   height: 10vh;
 }
 
+.card-holder {
+  display: flex;
+  justify-content: space-between;
+  background-color: #46424D;
+  margin: 1.25vw;
+  height: 13vh;
+  border-radius: .5vw;
+}
+
+.color-div-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.log-cards {
+  display: flex;
+}
+
+.little-color {
+  color:#CBC9CF;
+  font-weight: bolder;
+
+}
+
 /* look into pseudoproperties - wont be :hover,
 this will likely just be .study-btn-active
 class seclector with same props, diff url which

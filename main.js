@@ -183,6 +183,41 @@ function showElement(element) {
   element.classList.remove('hidden');
 }
 
+//alert removed upon timer completing
+//var startComplete = document.querySelector('.start-complete')
+// startComplete.innerHTML = 'Complete'
+//
+//
+//HTML
+  <section class="log-cards">
+    <p class="category-card">Placeholder</p>
+    corrisponding shape color??? just a box section?
+    <p class="time-card">x minutes</p>
+    <p class="describe-card">placeholder</p>
+//</section>
+
+//global variables
+// pastActivities = [] THIS IS THE DATA MODEL
+
+//event listener on click of logbtn
+
+//recentActivity = new Activity(this.category, inputBoxDescription.value, inputBoxMinutes.value, inputBoxMinutes.value);
+//store as returned object into an array
+
+
+
+//takes instanstiation of the activity class and innerHTML
+// `<p class="category-card">${this.category}</p>
+// <p class="time-card">${this.minutes}</p>
+// <p class="describe-card">${this.description}</p>`
+
+//then applies css classes to them
+
+
+//corrisponding shape color??? just a box section?
+
+
+
 //ems eyes and ems eyes only
 //create a function with 3 if statements that is within the submit event handler
 //function colorTimer() {
