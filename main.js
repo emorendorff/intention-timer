@@ -28,12 +28,18 @@ var timerArea = document.querySelector('#timerSection');
 var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
 var greyBoxTimer = document.querySelector('.grey-box');
+var categoryCard = document.querySelector('.category-card');
+var timeCard = document.querySelector('.time-card');
+var describeCard = document.querySelector('.describe-card');
+
+var cardHolder = document.querySelector('.card-holder');
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
+logBtn.addEventListener('click', renderPastActivities);
 
 // function(e) {
 //   e.preventDefault()
@@ -61,6 +67,27 @@ pastActivities = [];
 //   }
 // }
 //checked
+
+function updatePastActivities() {
+pastActivities.push(currentActivity);
+}
+
+function renderPastActivities(e){
+  e.preventDefault();
+  updatePastActivities();
+cardHolder.innerHTML = "";
+
+for (var i = 0; i < pastActivities.length; i++){
+  cardHolder.innerHTML += `<div class="log-cards">
+    <p class="category-card">${pastActivities[i].category}</p>
+    <p class="time-card">${pastActivities[i].minutes}}</p>
+    <p class="describe-card">${pastActivities[i].description}</p>
+  </div>
+  <div class="color-div-container">
+    <p class="little-color">|</p>
+  </div>`
+}
+}
 
 function validateForm(e){
   e.preventDefault();
@@ -188,12 +215,7 @@ function showElement(element) {
 // startComplete.innerHTML = 'Complete'
 //
 //
-//HTML
-  <section class="log-cards">
-    <p class="category-card">Placeholder</p>
-    corrisponding shape color??? just a box section?
-    <p class="time-card">x minutes</p>
-    <p class="describe-card">placeholder</p>
+
 //</section>
 
 //global variables
