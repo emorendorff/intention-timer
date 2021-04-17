@@ -209,25 +209,32 @@ will be triggered to change with js */
   border: 5px solid #fc8e88;
   background-color: transparent;
   border-radius: 50%;
-  margin: 22vw;
+  margin: 21vw;
 }
 
 .current-activity-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 3vw;
+  padding-bottom: 1vw;
   align-items: center;
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .timer-numbers {
   font-size: 4em;
-  margin-bottom: 48vh;
+  margin-bottom: 10vh;
+}
+
+.start {
+  padding-left: 3.5vw;
+  margin-bottom: 25.3vh;
+  font-size: 2em;
 }
 
 .circle-div {
-  display: inline;
+  /* display: inline; */
 }
 
 .log-button {
@@ -242,6 +249,8 @@ will be triggered to change with js */
   justify-content: flex-start;
   align-items: center;
   height: 5vh;
+  margin-bottom: 3vh;
+  padding-bottom: 3vh;
 }
 
 .hidden {
