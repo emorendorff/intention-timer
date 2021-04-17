@@ -186,6 +186,10 @@ input[type="submit"] {
   text-shadow: 2px 2px 8px #FF0000;
 }
 
+#categoryCard {
+  font-weight: bold;
+}
+
 /* look into pseudoproperties - wont be :hover,
 this will likely just be .study-btn-active
 class seclector with same props, diff url which

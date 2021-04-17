@@ -80,8 +80,8 @@ for (var i = 0; i < pastActivities.length; i++){
   `<aside>
     <div class="card-holder">
       <div class="log-cards">
-        <p class="category-card">${pastActivities[i].category}</p>
-        <p class="time-card">${pastActivities[i].minutes}}</p>
+        <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
+        <p class="time-card">${pastActivities[i].minutes} MIN</p>
         <p class="describe-card">${pastActivities[i].description}</p>
       </div>
       <div class="color-div-container">
