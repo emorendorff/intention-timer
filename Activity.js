@@ -7,29 +7,26 @@ class Activity {
   }
   //methods
   startTimer() {
-  const startingMinutes = this.minutes;
-  var time = startingMinutes * 60;
-
-  //insert element to display the time
-  //const countdownEl = document.getElementById('')
-
+  var time = (this.minutes * 60) +  this.seconds;
   //insert function to update the time
-  setInterval(updateCountdown,1000);
-
-  function updateCountdown() {
-    const minutes = Math.floor(time/ 60);
+  var polyclock = setInterval(function() {
+    var minutes = Math.floor(time/ 60);
     var seconds = time % 60;
-
     seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    //USE THE QUERY SELECtor from above to manipulate it's innerHTML
-    timerArea.innerHTML = `<p>${this.minutes}:${this.seconds}</p>`;
-    //queryselector.innerHTML = `${minutes}:${seconds}`;
+    if(seconds <= 0 && minutes <= 0){
+      clearInterval(polyclock);
+    }
+    countDownArea.innerHTML = `${minutes}:${seconds}`;
     time--;
-   }
+  }, 1000);
   }
 
-  markComplete(){}
+
+
+
+  markComplete(){
+  //clearInterval(polyclock);
+  }
 
   saveToStorage(){}
 

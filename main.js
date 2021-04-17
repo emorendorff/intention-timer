@@ -17,7 +17,11 @@ var meditateBtn = document.getElementById('meditateBtn');
 var exerciseBtn = document.getElementById('exerciseBtn');
 var submitBtn = document.getElementById('submit');
 var categoryBtns = document.querySelectorAll('.category-btn');
-var logBtn = document.getElementById('.log-button')
+var logBtn = document.querySelector('.log-button')
+
+var countDownArea = document.querySelector('.countdown');
+
+var startArea = document.getElementById('start-area')
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
@@ -67,12 +71,12 @@ function validateForm(e){
     if (checkedInputs) {
        currentActivity =
        new Activity(checkActiveCategory(), inputBoxDescription.value,
-        inputBoxMinutes.value ,inputBoxSeconds.values);
+        parseInt(inputBoxMinutes.value), parseInt(inputBoxSeconds.value));
         hideElement(formArea);
         greyBoxTimer.classList.add('.grey-box-timer');
         activityArea.innerText = 'Current Activity';
-
         showElement(timerArea);
+        currentActivity.startTimer();
     }
   }
 }
