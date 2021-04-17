@@ -79,6 +79,7 @@ header {
 }
 
 .accomplish-input {
+    background: transparent;
     width: 47.5vw;
 }
 
@@ -91,7 +92,14 @@ header {
 .user-input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #CBC9CF
+  border-bottom: 1px solid #CBC9CF;
+}
+
+input, select, textarea{
+    color: #FFF;
+}
+input:focus {
+  background-color: transparent;
 }
 
 .start-activity {
@@ -139,6 +147,7 @@ input[type="submit"] {
     border-radius: 3px;
     margin-left: 14vw;
     width: 14vw;
+    color: black;
 }
 
 .category-btn {
