@@ -36,6 +36,7 @@ var timeCard = document.querySelector('.time-card');
 var describeCard = document.querySelector('.describe-card');
 
 var cardHolder = document.querySelector('.card-holder');
+var aside = document.querySelector('aside')
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
@@ -72,17 +73,22 @@ pastActivities.push(currentActivity);
 function renderPastActivities(e){
   e.preventDefault();
   updatePastActivities();
-cardHolder.innerHTML = "";
+aside.innerHTML = "";
 
 for (var i = 0; i < pastActivities.length; i++){
-  cardHolder.innerHTML += `<div class="log-cards">
-    <p class="category-card">${pastActivities[i].category}</p>
-    <p class="time-card">${pastActivities[i].minutes}}</p>
-    <p class="describe-card">${pastActivities[i].description}</p>
-  </div>
-  <div class="color-div-container">
-    <p class="little-color">|</p>
-  </div>`
+  aside.innerHTML +=
+  `<aside>
+    <div class="card-holder">
+      <div class="log-cards">
+        <p class="category-card">${pastActivities[i].category}</p>
+        <p class="time-card">${pastActivities[i].minutes}}</p>
+        <p class="describe-card">${pastActivities[i].description}</p>
+      </div>
+      <div class="color-div-container">
+        <p class="little-color">|</p>
+        </div>
+        </div>
+  </aside>`
 }
 }
 
