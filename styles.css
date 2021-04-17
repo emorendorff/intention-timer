@@ -159,16 +159,22 @@ input[type="submit"] {
 .color-div-container {
   display: flex;
   justify-content: flex-end;
+  padding-top: 2vh;
+  padding-right: 1vw;
 }
 
 .log-cards {
+  padding-left: 1vw;
   display: flex;
+  flex-direction: column;
+  justify-content:space-around;
 }
 
 .little-color {
   color:#CBC9CF;
-  font-weight: bolder;
-
+  font-weight: 600;
+  /* text-shadow: -1px 1px #CBC9CF, 1px 1px #CBC9CF, 1px 1px #CBC9CF */
+  text-shadow: 2px 2px 8px #FF0000;
 }
 
 /* look into pseudoproperties - wont be :hover,
