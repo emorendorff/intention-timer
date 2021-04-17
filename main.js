@@ -31,23 +31,66 @@ var timerArea = document.querySelector('#timerSection');
 var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
 var greyBoxTimer = document.querySelector('.grey-box');
+var categoryCard = document.querySelector('.category-card');
+var timeCard = document.querySelector('.time-card');
+var describeCard = document.querySelector('.describe-card');
+
+var cardHolder = document.querySelector('.card-holder');
+var aside = document.querySelector('aside')
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
+logBtn.addEventListener('click', renderPastActivities);
 startComplete.addEventListener('click', function(e){
   e.preventDefault();
   currentActivity.startTimer()
 });
-
 
 // Global
 currentActivity = {};
 pastActivities = [];
 
 // Event Handlers
+
+// function checkFormFilled() {
+//   if (!checkInputsFilled() || !checkCategoryButtons()) {
+//     hideElement(categoryError);
+//     hideElement(descriptionError);
+//     showElement(fullError);
+//   } else {
+//     hideElement(fullError);
+//   }
+// }
+//checked
+
+function updatePastActivities() {
+pastActivities.push(currentActivity);
+}
+
+function renderPastActivities(e){
+  e.preventDefault();
+  updatePastActivities();
+aside.innerHTML = "";
+
+for (var i = 0; i < pastActivities.length; i++){
+  aside.innerHTML +=
+  `<aside>
+    <div class="card-holder">
+      <div class="log-cards">
+        <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
+        <p class="time-card">${pastActivities[i].minutes} MIN</p>
+        <p class="describe-card">${pastActivities[i].description}</p>
+      </div>
+      <div class="color-div-container">
+        <p class="little-color">|</p>
+        </div>
+        </div>
+  </aside>`
+}
+}
 
 function validateForm(e){
   e.preventDefault();
@@ -173,6 +216,36 @@ function hideElement(element) {
 function showElement(element) {
   element.classList.remove('hidden');
 }
+
+//alert removed upon timer completing
+//var startComplete = document.querySelector('.start-complete')
+// startComplete.innerHTML = 'Complete'
+//
+//
+
+//</section>
+
+//global variables
+// pastActivities = [] THIS IS THE DATA MODEL
+
+//event listener on click of logbtn
+
+//recentActivity = new Activity(this.category, inputBoxDescription.value, inputBoxMinutes.value, inputBoxMinutes.value);
+//store as returned object into an array
+
+
+
+//takes instanstiation of the activity class and innerHTML
+// `<p class="category-card">${this.category}</p>
+// <p class="time-card">${this.minutes}</p>
+// <p class="describe-card">${this.description}</p>`
+
+//then applies css classes to them
+
+
+//corrisponding shape color??? just a box section?
+
+
 
 //ems eyes and ems eyes only
 //create a function with 3 if statements that is within the submit event handler

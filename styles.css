@@ -30,7 +30,7 @@ header {
     align-items: center;
     background-color: #46424D;
     color: #FFF;
-    font-size: 3rem;
+    font-size: 2.5rem;
     height: 10vh;
 }
 
@@ -156,6 +156,40 @@ input[type="submit"] {
   height: 10vh;
 }
 
+.card-holder {
+  display: flex;
+  justify-content: space-between;
+  background-color: #46424D;
+  margin: 1.25vw;
+  height: 13vh;
+  border-radius: .5vw;
+}
+
+.color-div-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2vh;
+  padding-right: 1vw;
+}
+
+.log-cards {
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.little-color {
+  color:#CBC9CF;
+  font-weight: 600;
+  /* text-shadow: -1px 1px #CBC9CF, 1px 1px #CBC9CF, 1px 1px #CBC9CF */
+  text-shadow: 2px 2px 8px #FF0000;
+}
+
+#categoryCard {
+  font-weight: bold;
+}
+
 /* look into pseudoproperties - wont be :hover,
 this will likely just be .study-btn-active
 class seclector with same props, diff url which
@@ -206,6 +240,10 @@ will be triggered to change with js */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.start-btn {
+  background-color: white;
 }
 
 .timer-section {
@@ -264,6 +302,13 @@ will be triggered to change with js */
   padding-bottom: 3vh;
 }
 
+.past-text {
+  padding-left: 3vh;
+}
+
+.empty-activites {
+  text-align: center;
+}
 .hidden {
   display: none;
 }

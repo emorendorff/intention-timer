@@ -4,6 +4,7 @@ class Activity {
       this.description = descriptionInput;
       this.minutes = minutesInput;
       this.seconds = secondsInput;
+      this.id = Date.now();
       this.isCountedToZero =  false;
   }
   //methods
