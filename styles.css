@@ -239,6 +239,13 @@ will be triggered to change with js */
   margin-top: 12vh;
 }
 
+.past-text {
+  padding-left: 3vh;
+}
+
+.empty-activites {
+  text-align: center;
+}
 .hidden {
   display: none;
 }
