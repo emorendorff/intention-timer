@@ -207,6 +207,8 @@ will be triggered to change with js */
   height: 250px;
   width: 250px;
   border: 5px solid #fc8e88;
+  /* meditate active #bd8ce4 */
+  /* study active #b3fd78*/
   background-color: transparent;
   border-radius: 50%;
   margin: 21vw;
