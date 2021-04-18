@@ -99,7 +99,6 @@ function validateForm(e){
         setupClock();
     }
   }
-  // hideElement(logBtn);
 }
 
 function createNewActivity() {
