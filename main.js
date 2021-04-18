@@ -39,6 +39,7 @@ var cardHolder = document.querySelector('.card-holder');
 var aside = document.querySelector('aside');
 
 //Event Listeners
+window.addEventListener('load', renderPastActivities);
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
@@ -50,7 +51,11 @@ start.addEventListener('click', function(e){
       showElement(logBtn);
     }
 });
-logBtn.addEventListener('click', renderPastActivities);
+logBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  updatePastActivities();
+  renderPastActivities();
+});
 
 // Global
 currentActivity = {};
@@ -58,26 +63,45 @@ pastActivities = [];
 
 // Event Handlers
 function updatePastActivities() {
+//session storage
 pastActivities.push(currentActivity);
+//localStorage
+currentActivity.saveToStorage();
 }
 
-function renderPastActivities(e){
-  e.preventDefault();
-  updatePastActivities();
+/*
+function updatePastActivities() {
+  //session storage
+  pastActivities.push(currentActivity);
+  //localStorage
+  localStorage.setItem('Activities', JSON.stringify(pastActivities))
+  //localStorage
+  // var strungActivity = JSON.stringify(currentActivity)
+  // localStorage.setItem(currentActivity.id , strungActivity);
+  //session storage
+}
+*/
+
+function renderPastActivities(){
+  //e.preventDefault();
+  //updatePastActivities();
+  // console.log(parsed);
+  // debugger;
+  var parsed = JSON.parse(localStorage.getItem('Activities'));
   var categoryColor;
   aside.innerHTML = "";
 
-  for (var i = 0; i < pastActivities.length; i++){
-    categoryColor = pastActivities[i].category === 'Study' ? '#B3FD78' :
-    pastActivities[i].category === 'Meditate' ? '#C278FD' :
-    pastActivities[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+  for (var i = 0; i < parsed.length; i++){
+    categoryColor = parsed[i].category === 'Study' ? '#B3FD78' :
+    parsed[i].category === 'Meditate' ? '#C278FD' :
+    parsed[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
 
     aside.innerHTML +=
     `  <div class="card-holder">
         <div class="log-cards">
-          <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
-          <p class="time-card">${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS ⏰</p>
-          <p class="describe-card">${pastActivities[i].description}</p>
+          <p class="category-card" id="categoryCard">${parsed[i].category}</p>
+          <p class="time-card">${parsed[i].minutes} MIN ${parsed[i].seconds} SECONDS ⏰</p>
+          <p class="describe-card">${parsed[i].description}</p>
         </div>
         <div class="color-div-container">
           <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>

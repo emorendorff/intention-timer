@@ -36,6 +36,7 @@ class Activity {
   }
 
   saveToStorage(){
+    localStorage.setItem('Activities', JSON.stringify(pastActivities));
   }
 
 };

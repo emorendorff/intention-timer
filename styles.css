@@ -383,7 +383,7 @@ input[type="submit"] {
 }
 
 .log-activity {
-  height: 15vh;
+  height: 7vh;
 
   display: flex;
   flex-direction: row-reverse;
