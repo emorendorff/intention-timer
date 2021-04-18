@@ -24,11 +24,11 @@ var countDownArea = document.querySelector('.countdown');
 var start = document.querySelector('.timer-section');
 var complete = document.getElementById('start');
 var activityDescText = document.querySelector('#activeDesc')
-
+var deepTimer = document.getElementById('deepTimer');
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
-var timerBorder = document.getElementById('circleBorder');
+var circleBorder = document.getElementById('circleBorder');
 var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
 var greyBoxTimer = document.querySelector('.grey-box');
@@ -36,7 +36,7 @@ var categoryCard = document.querySelector('.category-card');
 var timeCard = document.querySelector('.time-card');
 var describeCard = document.querySelector('.describe-card');
 var cardHolder = document.querySelector('.card-holder');
-var aside = document.querySelector('aside')
+var aside = document.querySelector('aside');
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
@@ -177,9 +177,30 @@ function displayTimerColor() {
   `
 }
 
-function clearTimerArea() {
-  start.innerHTML = '';
-  start.innerHTML += showElement(logBtn);
+function displayTimerComplete() {
+  circleBorder.innerHTML = '';
+  var timerColor;
+  if (currentActivity.category === 'Study') {
+    timerColor = '#B3FD78'
+  } else if (currentActivity.category === 'Meditate') {
+    timerColor = '#C278FD'
+  } else {
+    timerColor = '#FD8078'
+  }
+  circleBorder.innerHTML +=
+  `
+  <div class="circle-div circle-div-border" id="circleBorder" style="border: 5px solid ${timerColor}">
+    <div class="start">
+      <p class="start-complete" id="start">Completed, Guvna!</p>
+    </div>
+
+  `
+}
+
+
+function showCompleted() {
+  displayTimerComplete()
+  showElement(logBtn);
 }
 
 function toggleCatBtn() {

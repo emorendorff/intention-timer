@@ -281,6 +281,7 @@ input[type="submit"] {
   justify-content: center;
   height: 65%;
   box-sizing: border-box;
+  /* border: .5px solid greenyellow; */
 }
 
 .timer-section {
@@ -290,10 +291,12 @@ input[type="submit"] {
   align-items: center;
   background-color: transparent;
   margin: 21vw;
-  max-height: inherit;
+  height: 24vh;
+  /* max-height: inherit; */
   box-sizing: border-box;
   font-size: 1em;
   font-weight: bold;
+  /* border: .5px solid greenyellow; */
 }
 
 .study-time {
@@ -319,6 +322,7 @@ input[type="submit"] {
 
 .countdown {
   font-size: 3.65em;
+  padding-bottom: 18.55vh;
 }
 
 .deep-timer {
@@ -328,6 +332,9 @@ input[type="submit"] {
   justify-content: space-around;
   align-items: center;
   position: static;
+  height: 20vh;
+  width: 21vw
+  /* border: .5px solid greenyellow; */
 }
 
 .start {
@@ -347,8 +354,8 @@ input[type="submit"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 37vh;
-  width: 20vw;
+  height: 38vh;
+  width: 22.50vw;
   box-sizing: border-box;
   position: fixed;
   border-radius: 50%;
@@ -376,7 +383,9 @@ input[type="submit"] {
 }
 
 .log-activity {
+  /* align-items: flex-end; */
   height: 15vh;
+  border: .5px solid greenyellow;
 }
 
 .past-text {

@@ -20,12 +20,10 @@ class Activity {
     seconds = seconds < 10 ? '0' + seconds : seconds;
     if(seconds < 1 && minutes < 1){
       clearInterval(polyclock);
-      this.completed = true;
-      if (this.completed) {
-        start.innerText = "Completed, Guvna!";
-        setTimeout(clearTimerArea, 3000);
-        // showElement(logBtn);
-      }
+      // if (this.completed) {
+        setTimeout(showCompleted, 2000);
+      // }
+      currentActivity.markComplete();
     }
     countDownArea.innerHTML = `${minutes}:${seconds}`;
     time--;
@@ -34,7 +32,10 @@ class Activity {
 }
 
   markComplete(){
+    this.completed = !this.completed;
+    console.log(currentActivity);
   }
+
   saveToStorage(){
   }
 
