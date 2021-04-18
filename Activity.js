@@ -22,7 +22,8 @@ class Activity {
       clearInterval(polyclock);
       this.completed = true;
       if (this.completed) {
-        startComplete.innerHTML = "Completed, Guvna";
+        startComplete.innerHTML = "Completed!";
+        showElement(logBtn);
       }
     }
     countDownArea.innerHTML = `${minutes}:${seconds}`;
