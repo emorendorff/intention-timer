@@ -301,6 +301,7 @@ input[type="submit"] {
   flex-direction: column;
   justify-content: font: ;lex-start;
   padding-bottom: .25vw;
+  padding-right: 6vw;
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
@@ -327,7 +328,7 @@ input[type="submit"] {
 
 .start {
   padding-left: 0;
-  margin-bottom: 15.3vh;
+  margin-bottom: 10.3vh;
   font-size: 1.5em;
   align-items: center;
 }
