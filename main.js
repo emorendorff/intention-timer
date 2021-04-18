@@ -202,8 +202,8 @@ function displayTimerComplete() {
 
 
 function showCompleted() {
-  displayTimerComplete()
   showElement(logBtn);
+  displayTimerComplete()
 }
 
 function toggleCatBtn() {

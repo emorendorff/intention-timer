@@ -18,8 +18,8 @@ class Activity {
       var seconds = time % 60;
       seconds = seconds < 10 ? '0' + seconds : seconds;
         if(seconds <= 0 && minutes <= 0){
-          clearInterval(polyclock);
           circleBorder.innerText === "Completed, Guvna!"
+          clearInterval(polyclock);
           setTimeout(showCompleted, 1000);
           return currentActivity.markComplete();
 
