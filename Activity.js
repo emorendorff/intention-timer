@@ -9,31 +9,32 @@ class Activity {
   }
   //methods
   startTimer() {
-    if(startComplete.innerHTML !== "Completed, Guvna"){
-  activityDescText.innerHTML = `${this.description}`;
-
-  var time = (this.minutes * 60) +  this.seconds;
+    if(circleBorder.innerText !== "Completed, Guvna!"){
+      activityDescText.innerHTML = `${this.description}`;
+      var time = (this.minutes * 60) +  this.seconds;
   //insert function to update the time
-  var polyclock = setInterval(function() {
-    var minutes = Math.floor(time/ 60);
-    var seconds = time % 60;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-    if(seconds <= 0 && minutes <= 0){
-      clearInterval(polyclock);
-      this.completed = true;
-      if (this.completed) {
-        startComplete.innerHTML = "Completed!";
-        showElement(logBtn);
-      }
+      var polyclock = setInterval(function() {
+      var minutes = Math.floor(time/ 60);
+      var seconds = time % 60;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+        if(seconds <= 0 && minutes <= 0){
+          clearInterval(polyclock);
+          if (currentActivity.markComplete()) {
+            circleBorder.innerText === "Completed, Guvna!"
+            showCompleted();
+          }
+        }
+        countDownArea.innerHTML = `${minutes}:${seconds}`;
+        time--;
+      }, 1000);
     }
-    countDownArea.innerHTML = `${minutes}:${seconds}`;
-    time--;
-  }, 1000);
   }
-}
 
   markComplete(){
+    this.completed = !this.completed;
+    return true;
   }
+
   saveToStorage(){
   }
 

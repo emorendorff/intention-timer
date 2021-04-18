@@ -21,12 +21,14 @@ var logBtn = document.querySelector('.log-button')
 
 var countDownArea = document.querySelector('.countdown');
 
-var startComplete = document.querySelector('#startComplete');
+var start = document.querySelector('.timer-section');
+var complete = document.getElementById('start');
 var activityDescText = document.querySelector('#activeDesc')
-
+var deepTimer = document.getElementById('deepTimer');
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
+var circleBorder = document.getElementById('circleBorder');
 var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
 var greyBoxTimer = document.querySelector('.grey-box');
@@ -34,16 +36,19 @@ var categoryCard = document.querySelector('.category-card');
 var timeCard = document.querySelector('.time-card');
 var describeCard = document.querySelector('.describe-card');
 var cardHolder = document.querySelector('.card-holder');
-var aside = document.querySelector('aside')
+var aside = document.querySelector('aside');
 
 //Event Listeners
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
-startComplete.addEventListener('click', function(e){
+start.addEventListener('click', function(e){
   e.preventDefault();
-  currentActivity.startTimer()
+  // currentActivity.startTimer()
+    if (currentActivity.startTimer()) {
+      showElement(logBtn);
+    }
 });
 logBtn.addEventListener('click', renderPastActivities);
 
@@ -92,9 +97,9 @@ function validateForm(e){
     if (checkedInputs) {
         createNewActivity();
         setupClock();
-        hideElement(logBtn);
     }
   }
+  // hideElement(logBtn);
 }
 
 function createNewActivity() {
@@ -106,8 +111,8 @@ function setupClock() {
   hideElement(formArea);
   greyBoxTimer.classList.add('.grey-box-timer');
   activityArea.innerText = 'Current Activity';
-  showElement(timerArea);
   displayTimerColor();
+  showElement(timerArea);
 }
 
 function checkInputsFilled() {
@@ -156,10 +161,49 @@ var activeIndex;
 }
 
 function displayTimerColor() {
-  console.log(currentActivity.category)
+  circleBorder.innerHTML = '';
+  var timerColor;
   if (currentActivity.category === 'Study') {
-    timerArea.classList.add('.study-timer')
+    timerColor = '#B3FD78'
+  } else if (currentActivity.category === 'Meditate') {
+    timerColor = '#C278FD'
+  } else {
+    timerColor = '#FD8078'
   }
+  circleBorder.innerHTML +=
+  `
+  <div class="circle-div circle-div-border" id="circleBorder" style="border: 5px solid ${timerColor}">
+    <div class="start">
+      <p class="start-complete" id="start">Start</p>
+    </div>
+
+  `
+}
+
+function displayTimerComplete() {
+  circleBorder.innerHTML = '';
+  var timerColor;
+  if (currentActivity.category === 'Study') {
+    timerColor = '#B3FD78'
+  } else if (currentActivity.category === 'Meditate') {
+    timerColor = '#C278FD'
+  } else {
+    timerColor = '#FD8078'
+  }
+  circleBorder.innerHTML +=
+  `
+  <div class="circle-div circle-div-border" id="circleBorder" style="border: 5px solid ${timerColor}">
+    <div class="start">
+      <p class="start-complete" id="start">Completed, Guvna!</p>
+    </div>
+
+  `
+}
+
+
+function showCompleted() {
+  showElement(logBtn);
+  displayTimerComplete()
 }
 
 function toggleCatBtn() {

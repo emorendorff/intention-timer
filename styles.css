@@ -281,6 +281,7 @@ input[type="submit"] {
   justify-content: center;
   height: 65%;
   box-sizing: border-box;
+  /* border: .5px solid greenyellow; */
 }
 
 .timer-section {
@@ -288,16 +289,14 @@ input[type="submit"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 250px;
-  border: 5px solid #fc8e88;
-  /* meditate active #bd8ce4 */
-  /* study active #b3fd78*/
   background-color: transparent;
-  border-radius: 50%;
   margin: 21vw;
-  max-height: inherit;
+  height: 24vh;
+  /* max-height: inherit; */
   box-sizing: border-box;
+  font-size: 1em;
+  font-weight: bold;
+  /* border: .5px solid greenyellow; */
 }
 
 .study-time {
@@ -318,20 +317,24 @@ input[type="submit"] {
 
 .timer-numbers {
   box-sizing: border-box;
-  margin-bottom: 35.5vh;
+  margin-bottom: 34.5vh;
 }
 
 .countdown {
   font-size: 3.65em;
+  padding-bottom: 18.55vh;
 }
 
 .deep-timer {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: static;
+  height: 20vh;
+  width: 21vw
+  /* border: .5px solid greenyellow; */
 }
 
 .start {
@@ -341,24 +344,50 @@ input[type="submit"] {
   align-items: center;
 }
 
+
+
+.circle-div-border-study,
+.circle-div-border-meditate,
+.circle-div-border-exercise,
 .circle-div {
-  height 40%
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 38vh;
+  width: 22.50vw;
   box-sizing: border-box;
   position: fixed;
+  border-radius: 50%;
+}
+
+.circle-div-border-study {
+  border: 5px solid #B3FD78;
+}
+
+.circle-div-border-meditate {
+  border: 5px solid #BD8CE4;
+}
+
+.circle-div-border-exercise {
+  border: 5px solid #FD8078;
 }
 
 .log-button {
   width: 18vw;
   height: 5vh;
-  margin-top: 9vh;
+  margin-top: 4vh;
   border-radius: 0.8vh;
   box-sizing: border-box;
+  font-weight: bold;
 }
 
 .log-activity {
-  /* box-sizing: border-box; */
-  /* align-items: center; */
   height: 15vh;
+
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 21.55vw;
 }
 
 .past-text {

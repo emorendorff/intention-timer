@@ -23,23 +23,24 @@
 
 
           <section class="timer-section hidden" id="timerSection">
-            <div class="deep-timer ">
+            <div class="deep-timer " id="deepTimer">
               <div class="current-activity-text">
                 <h3 class="activity-description" id="activeDesc"></h3>
               </div>
               <div class="timer-numbers">
                 <p class="countdown"></p>
               </div>
-              <div class="circle-div">
+              <div class="circle-div circle-div-border" id="circleBorder">
                 <div class="start">
-                  <p class="start-complete" id="startComplete">Start</p>
+                  <p class="start-complete" id="start">Start</p>
+                  <p class="start-complete hidden" id="complete">Start</p>
                 </div>
-              </div>
-              <div class="log-activity ">
-                <button type="submit" class="log-button">Log Activity</button>
               </div>
             </div>
           </section>
+        </div>
+        <div class="log-activity">
+          <button type="submit" class="log-button hidden">Log Activity</button>
         </div>
         <div class="form-container">
           <section class="category-with-button">
