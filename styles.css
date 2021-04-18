@@ -383,9 +383,11 @@ input[type="submit"] {
 }
 
 .log-activity {
-  /* align-items: flex-end; */
   height: 15vh;
-  border: .5px solid greenyellow;
+  /* border: .5px solid greenyellow; */
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 21.55vw;
 }
 
 .past-text {

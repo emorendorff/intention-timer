@@ -45,7 +45,10 @@ exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
 start.addEventListener('click', function(e){
   e.preventDefault();
-  currentActivity.startTimer()
+  // currentActivity.startTimer()
+    if (currentActivity.startTimer()) {
+      showElement(logBtn);
+    }
 });
 logBtn.addEventListener('click', renderPastActivities);
 
