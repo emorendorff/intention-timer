@@ -18,12 +18,12 @@ class Activity {
       var seconds = time % 60;
       seconds = seconds < 10 ? '0' + seconds : seconds;
         if(seconds <= 0 && minutes <= 0){
-          circleBorder.innerText === "Completed, Guvna!"
           clearInterval(polyclock);
-          setTimeout(showCompleted, 1000);
-          return currentActivity.markComplete();
-
-      }
+          if (currentActivity.markComplete()) {
+            circleBorder.innerText === "Completed, Guvna!"
+            showCompleted();
+          }
+        }
         countDownArea.innerHTML = `${minutes}:${seconds}`;
         time--;
       }, 1000);
@@ -32,8 +32,6 @@ class Activity {
 
   markComplete(){
     this.completed = !this.completed;
-    showElement(logBtn);
-    console.log(currentActivity);
     return true;
   }
 
