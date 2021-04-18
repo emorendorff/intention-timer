@@ -23,7 +23,6 @@ var countDownArea = document.querySelector('.countdown');
 
 var startComplete = document.querySelector('#startComplete');
 var activityDescText = document.querySelector('#activeDesc')
-//var startArea = document.getElementById('start-area')
 
 
 // screen areas
@@ -43,29 +42,17 @@ studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
-logBtn.addEventListener('click', renderPastActivities);
 startComplete.addEventListener('click', function(e){
   e.preventDefault();
   currentActivity.startTimer()
 });
+logBtn.addEventListener('click', renderPastActivities);
 
 // Global
 currentActivity = {};
 pastActivities = [];
 
 // Event Handlers
-
-// function checkFormFilled() {
-//   if (!checkInputsFilled() || !checkCategoryButtons()) {
-//     hideElement(categoryError);
-//     hideElement(descriptionError);
-//     showElement(fullError);
-//   } else {
-//     hideElement(fullError);
-//   }
-// }
-//checked
-
 function updatePastActivities() {
 pastActivities.push(currentActivity);
 }
@@ -73,23 +60,28 @@ pastActivities.push(currentActivity);
 function renderPastActivities(e){
   e.preventDefault();
   updatePastActivities();
-aside.innerHTML = "";
+  var categoryColor;
+  aside.innerHTML = "";
 
-for (var i = 0; i < pastActivities.length; i++){
-  aside.innerHTML +=
-  `<aside>
-    <div class="card-holder">
-      <div class="log-cards">
-        <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
-        <p class="time-card">${pastActivities[i].minutes} MIN</p>
-        <p class="describe-card">${pastActivities[i].description}</p>
+  for (var i = 0; i < pastActivities.length; i++){
+    categoryColor = pastActivities[i].category === 'Study' ? '#B3FD78' :
+    pastActivities[i].category === 'Meditate' ? '#C278FD' :
+    pastActivities[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+
+    aside.innerHTML +=
+    `  <div class="card-holder">
+        <div class="log-cards">
+          <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
+          <p class="time-card">${pastActivities[i].minutes} MIN</p>
+          <p class="describe-card">${pastActivities[i].description}</p>
+        </div>
+        <div class="color-div-container">
+          <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
+        </div>
       </div>
-      <div class="color-div-container">
-        <p class="little-color">|</p>
-        </div>
-        </div>
-  </aside>`
-}
+    `
+  }
+  showElement(cardHolder)
 }
 
 function validateForm(e){
@@ -131,7 +123,7 @@ function checkInputsFilled() {
     return true;
   }
 }
-//checked
+
 function checkCategoryButtons() {
   var isCatButtonChecked = false;
   for (var i = 0; i < categoryBtns.length; i++) {
@@ -208,22 +200,12 @@ inputBoxSeconds.addEventListener("keydown", function(e) {
 function toggleElement(element) {
   element.classList.toggle('hidden');
 }
-
 function hideElement(element) {
   element.classList.add('hidden');
 }
-
 function showElement(element) {
   element.classList.remove('hidden');
 }
-
-//alert removed upon timer completing
-//var startComplete = document.querySelector('.start-complete')
-// startComplete.innerHTML = 'Complete'
-//
-//
-
-//</section>
 
 //global variables
 // pastActivities = [] THIS IS THE DATA MODEL

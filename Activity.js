@@ -4,8 +4,8 @@ class Activity {
       this.description = descriptionInput;
       this.minutes = minutesInput;
       this.seconds = secondsInput;
+      this.completed =  false;
       this.id = Date.now();
-      this.isCountedToZero =  false;
   }
   //methods
   startTimer() {
@@ -20,10 +20,9 @@ class Activity {
     seconds = seconds < 10 ? '0' + seconds : seconds;
     if(seconds <= 0 && minutes <= 0){
       clearInterval(polyclock);
-      this.isCountedToZero = true;
-      if (this.isCountedToZero) {
+      this.completed = true;
+      if (this.completed) {
         startComplete.innerHTML = "Completed, Guvna";
-        alert("POLYCLOCK has run out of time")
       }
     }
     countDownArea.innerHTML = `${minutes}:${seconds}`;
@@ -32,11 +31,9 @@ class Activity {
   }
 }
 
-
   markComplete(){
-  //clearInterval(polyclock);
   }
-
-  saveToStorage(){}
+  saveToStorage(){
+  }
 
 };

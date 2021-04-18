@@ -14,6 +14,18 @@ Error: #EFB7EC */
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+  /* height: 100%; */
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  height: 83%;
+  width: 90%;
+  overflow: scroll;
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -109,6 +121,12 @@ input:focus {
   padding-top: 8vh;
 }
 
+.timer-area-container {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
 .new-activity-form {
     width: 66vw;
     margin: 2vh;
@@ -124,6 +142,7 @@ input:focus {
     border-left-color: #46424D;
     border-left-style: solid;
     width: 34vw;
+    max-height: inherit;
 }
 
 .category-with-button {
@@ -177,13 +196,6 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   justify-content:space-around;
-}
-
-.little-color {
-  color:#CBC9CF;
-  font-weight: 600;
-  /* text-shadow: -1px 1px #CBC9CF, 1px 1px #CBC9CF, 1px 1px #CBC9CF */
-  text-shadow: 2px 2px 8px #FF0000;
 }
 
 #categoryCard {
@@ -243,7 +255,17 @@ will be triggered to change with js */
 }
 
 .start-btn {
-  background-color: white;
+  color: #CBC9CF;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.timer-area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65%;
+  box-sizing: border-box;
 }
 
 .timer-section {
@@ -251,14 +273,16 @@ will be triggered to change with js */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
   border: 5px solid #fc8e88;
   /* meditate active #bd8ce4 */
   /* study active #b3fd78*/
   background-color: transparent;
   border-radius: 50%;
   margin: 21vw;
+  max-height: inherit;
+  box-sizing: border-box;
 }
 
 .current-activity-text {
@@ -269,37 +293,40 @@ will be triggered to change with js */
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
+  box-sizing: border-box;
 }
 
 .timer-numbers {
+  box-sizing: border-box;
   font-size: 4em;
-  margin-bottom: 10vh;
+  margin-bottom: 20.5vh;
 }
 
 .start {
-  padding-left: 3.5vw;
+  padding-left: 0.60vw;
   margin-bottom: 25.3vh;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .circle-div {
-  /* display: inline; */
+  height 40%
+  box-sizing: border-box;
 }
 
 .log-button {
   width: 18vw;
   height: 5vh;
-  border-radius: 0.7vh;
+  border-radius: 0.8vh;
+  margin: 0;
 }
 
 .log-activity {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  box-sizing: border-box;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
   align-items: center;
-  height: 5vh;
-  margin-bottom: 3vh;
-  padding-bottom: 3vh;
+  height: 15vh;
 }
 
 .past-text {
