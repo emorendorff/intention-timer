@@ -198,13 +198,6 @@ input[type="submit"] {
   justify-content:space-around;
 }
 
-.little-color {
-  color:#CBC9CF;
-  font-weight: 600;
-  /* text-shadow: -1px 1px #CBC9CF, 1px 1px #CBC9CF, 1px 1px #CBC9CF */
-  text-shadow: 2px 2px 8px #FF0000;
-}
-
 #categoryCard {
   font-weight: bold;
 }
