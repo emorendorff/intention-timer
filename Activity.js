@@ -23,6 +23,7 @@ class Activity {
       this.completed = true;
       if (this.completed) {
         startComplete.innerHTML = "Completed!";
+        showElement(logBtn);
       }
     }
     countDownArea.innerHTML = `${minutes}:${seconds}`;

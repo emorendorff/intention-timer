@@ -33,7 +33,6 @@ var greyBoxTimer = document.querySelector('.grey-box');
 var categoryCard = document.querySelector('.category-card');
 var timeCard = document.querySelector('.time-card');
 var describeCard = document.querySelector('.describe-card');
-
 var cardHolder = document.querySelector('.card-holder');
 var aside = document.querySelector('aside')
 
@@ -72,7 +71,7 @@ function renderPastActivities(e){
     `  <div class="card-holder">
         <div class="log-cards">
           <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
-          <p class="time-card">${pastActivities[i].minutes} MIN</p>
+          <p class="time-card">${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS ⏰</p>
           <p class="describe-card">${pastActivities[i].description}</p>
         </div>
         <div class="color-div-container">
@@ -93,6 +92,7 @@ function validateForm(e){
     if (checkedInputs) {
         createNewActivity();
         setupClock();
+        hideElement(logBtn);
     }
   }
 }
@@ -107,6 +107,7 @@ function setupClock() {
   greyBoxTimer.classList.add('.grey-box-timer');
   activityArea.innerText = 'Current Activity';
   showElement(timerArea);
+  displayTimerColor();
 }
 
 function checkInputsFilled() {
@@ -151,6 +152,13 @@ var activeIndex;
     return 'Meditate'
   } else if (activeIndex === 2) {
     return 'Exercise'
+  }
+}
+
+function displayTimerColor() {
+  console.log(currentActivity.category)
+  if (currentActivity.category === 'Study') {
+    timerArea.classList.add('.study-timer')
   }
 }
 

@@ -9,7 +9,7 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-    /* border: 1px solid greenyellow; */
+    /* border: .5px solid greenyellow; */
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -171,8 +171,12 @@ input:focus {
   /* border: transparent; */
 }
 
+.category-btn:focus {
+  outline:
+}
+
 input:focus {
-    outline: none;
+  outline: #B3fd78;
 }
 
 input[type="submit"] {
@@ -296,10 +300,14 @@ input[type="submit"] {
   box-sizing: border-box;
 }
 
+.study-time {
+  border: 5px solid #FC8E88;
+}
+
 .current-activity-text {
   display: flex;
   flex-direction: column;
-  justify-content: font: ;lex-start;
+  justify-content: flex-start;
   padding-bottom: .25vw;
   padding-right: 6vw;
   align-items: center;
