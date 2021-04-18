@@ -168,6 +168,11 @@ input:focus {
   padding-left: 6vw;
   padding-right: 6vw;
   margin-bottom: 6vh;
+  /* border: transparent; */
+}
+
+input:focus {
+    outline: none;
 }
 
 input[type="submit"] {
@@ -212,11 +217,6 @@ input[type="submit"] {
 #categoryCard {
   font-weight: bold;
 }
-
-/* look into pseudoproperties - wont be :hover,
-this will likely just be .study-btn-active
-class seclector with same props, diff url which
-will be triggered to change with js */
 
 .study-btn {
   border: 1px solid #CBC9CF;
@@ -284,8 +284,8 @@ will be triggered to change with js */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border: 5px solid #fc8e88;
   /* meditate active #bd8ce4 */
   /* study active #b3fd78*/
@@ -309,30 +309,46 @@ will be triggered to change with js */
 
 .timer-numbers {
   box-sizing: border-box;
+  margin-bottom: 35.5vh;
+}
+
+.countdown {
   font-size: 3.65em;
-  margin-bottom: 20.5vh;
+}
+
+.deep-timer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: static;
 }
 
 .start {
-  padding-left: 0.60vw;
-  margin-bottom: 25.3vh;
+  padding-left: 0;
+  margin-bottom: 15.3vh;
   font-size: 1.5em;
+  align-items: center;
 }
 
 .circle-div {
   height 40%
   box-sizing: border-box;
+  position: fixed;
 }
 
 .log-button {
   width: 18vw;
   height: 5vh;
+  margin-top: 9vh;
   border-radius: 0.8vh;
+  box-sizing: border-box;
 }
 
 .log-activity {
-  box-sizing: border-box;
-  align-items: center;
+  /* box-sizing: border-box; */
+  /* align-items: center; */
   height: 15vh;
 }
 
