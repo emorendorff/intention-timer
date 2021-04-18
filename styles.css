@@ -150,9 +150,9 @@ input:focus {
   flex-direction: column;
 }
 
-
-.category-with-button h3 {
-  /* padding-top:  */
+ h3 {
+  /* font-weight: bolder; */
+  padding-left: 5vw;
   padding-bottom: 1.5vh;
 }
 
@@ -160,6 +160,9 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-bottom: 18vh;
 }
 
 input[type="submit"] {
@@ -170,9 +173,9 @@ input[type="submit"] {
 }
 
 .category-btn {
-  border-radius: 5px;
-  width: 13vw;
+  width: 11vw;
   height: 10vh;
+  border-radius: 3px;
 }
 
 .card-holder {
