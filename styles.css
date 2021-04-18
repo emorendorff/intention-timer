@@ -288,16 +288,12 @@ input[type="submit"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 250px;
-  border: 5px solid #fc8e88;
-  /* meditate active #bd8ce4 */
-  /* study active #b3fd78*/
   background-color: transparent;
-  border-radius: 50%;
   margin: 21vw;
   max-height: inherit;
   box-sizing: border-box;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .study-time {
@@ -318,7 +314,7 @@ input[type="submit"] {
 
 .timer-numbers {
   box-sizing: border-box;
-  margin-bottom: 35.5vh;
+  margin-bottom: 39.5vh;
 }
 
 .countdown {
@@ -329,7 +325,7 @@ input[type="submit"] {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: static;
 }
@@ -341,23 +337,45 @@ input[type="submit"] {
   align-items: center;
 }
 
+
+
+.circle-div-border-study,
+.circle-div-border-meditate,
+.circle-div-border-exercise,
 .circle-div {
-  height 40%
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 37vh;
+  width: 20vw;
   box-sizing: border-box;
   position: fixed;
+  border-radius: 50%;
+}
+
+.circle-div-border-study {
+  border: 5px solid #B3FD78;
+}
+
+.circle-div-border-meditate {
+  border: 5px solid #BD8CE4;
+}
+
+.circle-div-border-exercise {
+  border: 5px solid #FD8078;
 }
 
 .log-button {
   width: 18vw;
   height: 5vh;
-  margin-top: 9vh;
+  margin-top: 4vh;
   border-radius: 0.8vh;
   box-sizing: border-box;
+  font-weight: bold;
 }
 
 .log-activity {
-  /* box-sizing: border-box; */
-  /* align-items: center; */
   height: 15vh;
 }
 

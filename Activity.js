@@ -9,7 +9,7 @@ class Activity {
   }
   //methods
   startTimer() {
-    if(startComplete.innerHTML !== "Completed, Guvna"){
+    if(start.innerHTML !== "Completed, Guvna!"){
   activityDescText.innerHTML = `${this.description}`;
 
   var time = (this.minutes * 60) +  this.seconds;
@@ -18,12 +18,13 @@ class Activity {
     var minutes = Math.floor(time/ 60);
     var seconds = time % 60;
     seconds = seconds < 10 ? '0' + seconds : seconds;
-    if(seconds <= 0 && minutes <= 0){
+    if(seconds < 1 && minutes < 1){
       clearInterval(polyclock);
       this.completed = true;
       if (this.completed) {
-        startComplete.innerHTML = "Completed!";
-        showElement(logBtn);
+        start.innerText = "Completed, Guvna!";
+        setTimeout(clearTimerArea, 3000);
+        // showElement(logBtn);
       }
     }
     countDownArea.innerHTML = `${minutes}:${seconds}`;

@@ -21,12 +21,14 @@ var logBtn = document.querySelector('.log-button')
 
 var countDownArea = document.querySelector('.countdown');
 
-var startComplete = document.querySelector('#startComplete');
+var start = document.querySelector('.timer-section');
+var complete = document.getElementById('start');
 var activityDescText = document.querySelector('#activeDesc')
 
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
+var timerBorder = document.getElementById('circleBorder');
 var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
 var greyBoxTimer = document.querySelector('.grey-box');
@@ -41,7 +43,7 @@ studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
-startComplete.addEventListener('click', function(e){
+start.addEventListener('click', function(e){
   e.preventDefault();
   currentActivity.startTimer()
 });
@@ -92,9 +94,9 @@ function validateForm(e){
     if (checkedInputs) {
         createNewActivity();
         setupClock();
-        hideElement(logBtn);
     }
   }
+  hideElement(logBtn);
 }
 
 function createNewActivity() {
@@ -106,8 +108,8 @@ function setupClock() {
   hideElement(formArea);
   greyBoxTimer.classList.add('.grey-box-timer');
   activityArea.innerText = 'Current Activity';
-  showElement(timerArea);
   displayTimerColor();
+  showElement(timerArea);
 }
 
 function checkInputsFilled() {
@@ -156,10 +158,28 @@ var activeIndex;
 }
 
 function displayTimerColor() {
-  console.log(currentActivity.category)
+  circleBorder.innerHTML = '';
+  var timerColor;
   if (currentActivity.category === 'Study') {
-    timerArea.classList.add('.study-timer')
+    timerColor = '#B3FD78'
+  } else if (currentActivity.category === 'Meditate') {
+    timerColor = '#C278FD'
+  } else {
+    timerColor = '#FD8078'
   }
+  circleBorder.innerHTML +=
+  `
+  <div class="circle-div circle-div-border" id="circleBorder" style="border: 5px solid ${timerColor}">
+    <div class="start">
+      <p class="start-complete" id="start">Start</p>
+    </div>
+
+  `
+}
+
+function clearTimerArea() {
+  start.innerHTML = '';
+  start.innerHTML += showElement(logBtn);
 }
 
 function toggleCatBtn() {
