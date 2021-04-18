@@ -36,7 +36,12 @@ class Activity {
   }
 
   saveToStorage(){
+    if(localStorage.getItem('Activities') == null){
+      localStorage.setItem('Activities', '[]');
+    }
+
     localStorage.setItem('Activities', JSON.stringify(pastActivities));
+    pastActivities.push()
   }
 
 };

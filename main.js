@@ -63,10 +63,24 @@ pastActivities = [];
 
 // Event Handlers
 function updatePastActivities() {
-//session storage
-pastActivities.push(currentActivity);
+var new_data = currentActivity;
+
+if(localStorage.getItem('Activities') == null){
+  localStorage.setItem('Activities', '[]');
+}
+
+var old_data = JSON.parse(localStorage.getItem("Activities"));
+old_data.push(new_data);
+
+localStorage.setItem('Activities', JSON.stringify(old_data));
+// pastActivities.push()
+// //session storage
+// pastActivities.push(currentActivity);
 //localStorage
-currentActivity.saveToStorage();
+//var old_data = JSON.parse(localStorage.getItem('data'));
+//old_data.push(new_data);
+//localStorage.setItem('Activities', JSON.stringify(pastActivities));
+//currentActivity.saveToStorage();
 }
 
 /*
@@ -87,29 +101,32 @@ function renderPastActivities(){
   //updatePastActivities();
   // console.log(parsed);
   // debugger;
-  var parsed = JSON.parse(localStorage.getItem('Activities'));
-  var categoryColor;
-  aside.innerHTML = "";
+  if (localStorage.getItem('Activities') != null){
 
-  for (var i = 0; i < parsed.length; i++){
-    categoryColor = parsed[i].category === 'Study' ? '#B3FD78' :
-    parsed[i].category === 'Meditate' ? '#C278FD' :
-    parsed[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+    var parsed = JSON.parse(localStorage.getItem('Activities'));
+    var categoryColor;
+    aside.innerHTML = "";
 
-    aside.innerHTML +=
-    `  <div class="card-holder">
-        <div class="log-cards">
-          <p class="category-card" id="categoryCard">${parsed[i].category}</p>
-          <p class="time-card">${parsed[i].minutes} MIN ${parsed[i].seconds} SECONDS ⏰</p>
-          <p class="describe-card">${parsed[i].description}</p>
-        </div>
-        <div class="color-div-container">
-          <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
-        </div>
+    for (var i = 0; i < parsed.length; i++){
+      categoryColor = parsed[i].category === 'Study' ? '#B3FD78' :
+      parsed[i].category === 'Meditate' ? '#C278FD' :
+      parsed[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+
+      aside.innerHTML +=
+      `  <div class="card-holder">
+      <div class="log-cards">
+      <p class="category-card" id="categoryCard">${parsed[i].category}</p>
+      <p class="time-card">${parsed[i].minutes} MIN ${parsed[i].seconds} SECONDS ⏰</p>
+      <p class="describe-card">${parsed[i].description}</p>
       </div>
-    `
+      <div class="color-div-container">
+      <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
+      </div>
+      </div>
+      `
+    }
+    showElement(cardHolder)
   }
-  showElement(cardHolder)
 }
 
 function validateForm(e){
