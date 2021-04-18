@@ -23,7 +23,6 @@ class Activity {
       this.isCountedToZero = true;
       if (this.isCountedToZero) {
         startComplete.innerHTML = "Completed, Guvna";
-        alert("POLYCLOCK has run out of time")
       }
     }
     countDownArea.innerHTML = `${minutes}:${seconds}`;

@@ -77,7 +77,7 @@ aside.innerHTML = "";
 
 for (var i = 0; i < pastActivities.length; i++){
   aside.innerHTML +=
-  `<aside>
+  `
     <div class="card-holder">
       <div class="log-cards">
         <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
@@ -88,7 +88,7 @@ for (var i = 0; i < pastActivities.length; i++){
         <p class="little-color">|</p>
         </div>
         </div>
-  </aside>`
+    `
 }
 }
 

@@ -14,6 +14,18 @@ Error: #EFB7EC */
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  height: 70%;
+  width: 90%;
+  overflow: scroll;
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -124,6 +136,7 @@ input:focus {
     border-left-color: #46424D;
     border-left-style: solid;
     width: 34vw;
+    height: 100%
 }
 
 .category-with-button {
