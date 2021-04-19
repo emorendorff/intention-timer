@@ -8,6 +8,8 @@ Meditate: #C278FD
 Exercise: #FD8078
 Error: #EFB7EC */
 
+/* Headings */
+
 * {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -44,6 +46,15 @@ header {
   height: 10vh;
 }
 
+
+/* Form Area */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: auto;
+}
+
 .grey-box-timer {
   background-color: #46424D;
   width: 95%;
@@ -66,22 +77,6 @@ header {
   align-self: center;
 }
 
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-self: auto;
-}
-
-.just-in-time {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 4vw;
-  padding-right: 7vw;
-}
-
 .accomplish {
   display: flex;
   flex-direction: column;
@@ -96,12 +91,30 @@ header {
   width: 47.5vw;
 }
 
+.new-activity-form {
+  width: 66vw;
+  margin: 2vh;
+}
+
+.new-activity-form h2 {
+  margin-bottom: 1.5vh;
+  margin-top: 1.5vh;
+}
+
+/* TIMER AREA */
+.just-in-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 4vw;
+  padding-right: 7vw;
+}
+
 .minutes, .seconds {
   display: flex;
   flex-direction: column;
   padding-left: 4vh;
   width: 19vw;
-  /* padding-bottom: 13%; */
 }
 
 .user-input {
@@ -110,8 +123,85 @@ header {
   border-bottom: 1px solid #CBC9CF;
 }
 
+.timer-area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65%;
+  box-sizing: border-box;
+}
+
+.timer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin: 21vw;
+  height: 24vh;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.timer-numbers {
+  box-sizing: border-box;
+  margin-bottom: 34.5vh;
+}
+
+.countdown {
+  font-size: 3.65em;
+  padding-bottom: 18.55vh;
+}
+
+.deep-timer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: static;
+  height: 20vh;
+  width: 21vw
+}
+
+.start {
+  padding-left: 0;
+  margin-bottom: 10.3vh;
+  font-size: 1.5em;
+  align-items: center;
+}
+
+.circle-div-border-study,
+.circle-div-border-meditate,
+.circle-div-border-exercise,
+.circle-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 38vh;
+  width: 22.50vw;
+  box-sizing: border-box;
+  position: fixed;
+  border-radius: 50%;
+}
+
+.circle-div-border-study {
+  border: 5px solid #B3FD78;
+}
+
+.circle-div-border-meditate {
+  border: 5px solid #BD8CE4;
+}
+
+.circle-div-border-exercise {
+  border: 5px solid #FD8078;
+}
+
+/* Buttons */
 input, select, textarea{
-    color: #FFF;
+  color: #FFF;
 }
 input:focus {
   background-color: transparent;
@@ -122,106 +212,6 @@ input:focus {
   flex-direction: row;
   justify-content: flex-end;
   margin-bottom: 8vh;
-}
-
-.timer-area-container {
-  height: inherit;
-  display: flex;
-  flex-direction: column;
-}
-
-.new-activity-form {
-    width: 66vw;
-    margin: 2vh;
-}
-
-.new-activity-form h2 {
-  margin-bottom: 1.5vh;
-  margin-top: 1.5vh;
-}
-
-.past-activities {
-  border-left-width: 0.25rem;
-  border-left-color: #46424D;
-  border-left-style: solid;
-  width: 34vw;
-  max-height: inherit;
-}
-
-.category-with-button {
-  display: flex;
-  flex-direction: column;
-}
-
- h3 {
-  /* font-weight: bolder; */
-  padding-left: 6vw;
-  padding-bottom: 1.5vh;
-}
-
-.select-category {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 6vw;
-  padding-right: 6vw;
-  margin-bottom: 6vh;
-  /* border: transparent; */
-}
-
-.category-btn:focus {
-  outline:
-}
-
-input:focus {
-  outline: #B3fd78;
-}
-
-input[type="submit"] {
-  border-radius: 5px;
-  margin-left: 14vw;
-  width: 12vw;
-  height: 5.5vh;
-  color: black;
-  margin-top: 2vh;
-  margin-right: 7.5vw;
-}
-
-#submit{
-  width: 18.5vw;
-}
-
-.category-btn {
-  width: 11vw;
-  height: 10vh;
-  border-radius: 3px;
-}
-
-.card-holder {
-  display: flex;
-  justify-content: space-between;
-  background-color: #46424D;
-  margin: 1.25vw;
-  height: 13vh;
-  border-radius: .5vw;
-}
-
-.color-div-container {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 2vh;
-  padding-right: 1vw;
-}
-
-.log-cards {
-  padding-left: 1vw;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-around;
-}
-
-#categoryCard {
-  font-weight: bold;
 }
 
 .study-btn {
@@ -278,25 +268,107 @@ input[type="submit"] {
   width: 8vw;
 }
 
-.timer-area-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 65%;
-  box-sizing: border-box;
-  /* border: .5px solid greenyellow; */
+input:focus {
+  outline: #B3fd78;
 }
 
-.timer-section {
+input[type="submit"] {
+  border-radius: 5px;
+  margin-left: 14vw;
+  width: 12vw;
+  height: 5.5vh;
+  color: black;
+  margin-top: 2vh;
+  margin-right: 7.5vw;
+}
+
+#submit{
+  width: 18.5vw;
+}
+
+.category-btn {
+  width: 11vw;
+  height: 10vh;
+  border-radius: 3px;
+}
+
+.category-with-button {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  margin: 21vw;
-  height: 24vh;
+}
+
+.log-button {
+  width: 18vw;
+  height: 5vh;
+  margin-top: 4vh;
+  border-radius: 0.8vh;
   box-sizing: border-box;
-  font-size: 1em;
+  font-weight: bold;
+}
+
+.select-category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  margin-bottom: 6vh;
+}
+
+.log-activity {
+  height: 7vh;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 21.55vw;
+}
+
+.start-again {
+  border-radius: 10px;
+  margin-top: 2vh;
+  margin-right: 0.35vw;
+  width: 13vw;
+  height: 5vh;
+}
+
+/* Past Activity Cards */
+
+.past-activities {
+  border-left-width: 0.25rem;
+  border-left-color: #46424D;
+  border-left-style: solid;
+  width: 34vw;
+  max-height: inherit;
+}
+
+ h3 {
+  padding-left: 6vw;
+  padding-bottom: 1.5vh;
+}
+
+.card-holder {
+  display: flex;
+  justify-content: space-between;
+  background-color: #46424D;
+  margin: 1.25vw;
+  height: 13vh;
+  border-radius: .5vw;
+}
+
+.color-div-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2vh;
+  padding-right: 1vw;
+}
+
+.log-cards {
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.category-card {
   font-weight: bold;
 }
 
@@ -316,80 +388,6 @@ input[type="submit"] {
   box-sizing: border-box;
 }
 
-.timer-numbers {
-  box-sizing: border-box;
-  margin-bottom: 34.5vh;
-}
-
-.countdown {
-  font-size: 3.65em;
-  padding-bottom: 18.55vh;
-}
-
-.deep-timer {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: static;
-  height: 20vh;
-  width: 21vw
-  /* border: .5px solid greenyellow; */
-}
-
-.start {
-  padding-left: 0;
-  margin-bottom: 10.3vh;
-  font-size: 1.5em;
-  align-items: center;
-}
-
-
-
-.circle-div-border-study,
-.circle-div-border-meditate,
-.circle-div-border-exercise,
-.circle-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 38vh;
-  width: 22.50vw;
-  box-sizing: border-box;
-  position: fixed;
-  border-radius: 50%;
-}
-
-.circle-div-border-study {
-  border: 5px solid #B3FD78;
-}
-
-.circle-div-border-meditate {
-  border: 5px solid #BD8CE4;
-}
-
-.circle-div-border-exercise {
-  border: 5px solid #FD8078;
-}
-
-.log-button {
-  width: 18vw;
-  height: 5vh;
-  margin-top: 4vh;
-  border-radius: 0.8vh;
-  box-sizing: border-box;
-  font-weight: bold;
-}
-
-.log-activity {
-  height: 7vh;
-  display: flex;
-  flex-direction: row-reverse;
-  padding-right: 21.55vw;
-}
-
 .past-text {
   padding-left: 3vh;
 }
@@ -401,14 +399,6 @@ input[type="submit"] {
 .reset-new-activity{
   display: flex;
   justify-content: space-between;
-}
-
-.start-again {
-  border-radius: 10px;
-    margin-top: 2vh;
-    margin-right: 0.35vw;
-    width: 13vw;
-    height: 5vh;
 }
 
 .hidden {
