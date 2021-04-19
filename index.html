@@ -17,11 +17,12 @@
   <header>INTENTION TIMER</header>
   <main>
     <section class="new-activity-form">
+      <div class="reset-new-activity">
       <h2 class="activity-text">New Activity</h2>
+      <button class="start-again hidden">New Activity</button>
+      </div>
       <div class="grey-box">
         <div class="timer-area-container">
-
-
           <section class="timer-section hidden" id="timerSection">
             <div class="deep-timer " id="deepTimer">
               <div class="current-activity-text">
@@ -46,17 +47,13 @@
           <section class="category-with-button">
             <h3>Select a category:</h3>
             <section class="select-category">
-              <!-- <button class="study-btn">Study</button> -->
               <input type="button" class="study-btn category-btn" id="studyBtn">
-              <!-- <button class="meditate-btn">Meditate</button> -->
               <input type="button" class="meditate-btn category-btn" id="meditateBtn">
-              <!-- <button class="exercise-btn">Exercise</button> -->
               <input type="button" class="exercise-btn category-btn" id="exerciseBtn">
             </section>
           </section>
-          <p class="require hidden" id="categoryError">Dear fool, please check a category!</p>
+          <p class="require hidden" id="categoryError">A category is required.</p>
           <form>
-            <!-- Make sure to check name attribute on text-inputs -->
             <div class="accomplish">
               <label for="description">What would you like to accomplish during this time?</label>
               <input type="text" class="user-input accomplish-input" id="description" name="description">
@@ -64,7 +61,7 @@
             </div>
             <div class="just-in-time">
               <div class="minutes">
-                <label for="minutes">Minutes (0-59)</label>
+                  <label for="minutes">Minutes (0-59)</label>
                 <input type="number" class="user-input" id="minutes" name="minutes" min="0" max="59">
                 <p class="require hidden" id="minutesError">Minutes are required.</p>
               </div>
@@ -84,8 +81,8 @@
     </section>
     <section class="past-activities">
       <h2 class="past-text">Past Activities</h2><br>
-      <p class="empty-activites">You have not logged any activites yet.</p>
-      <p class="empty-activites">Complete the form to the left to get started!</p>
+      <p class="empty-activities">You have not logged any activites yet.</p>
+      <p class="empty-activities">Complete the form to the left to get started!</p>
       <aside>
         <div class="card-holder hidden">
           <div class="log-cards">
@@ -99,9 +96,7 @@
       </div>
       </aside>
     </section>
-
   </main>
-
 
 </body>
 

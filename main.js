@@ -18,6 +18,7 @@ var exerciseBtn = document.getElementById('exerciseBtn');
 var submitBtn = document.getElementById('submit');
 var categoryBtns = document.querySelectorAll('.category-btn');
 var logBtn = document.querySelector('.log-button')
+var startAgainBtn = document.querySelector('.start-again');
 
 var countDownArea = document.querySelector('.countdown');
 
@@ -37,20 +38,38 @@ var timeCard = document.querySelector('.time-card');
 var describeCard = document.querySelector('.describe-card');
 var cardHolder = document.querySelector('.card-holder');
 var aside = document.querySelector('aside');
+var emptyActCommand = document.querySelectorAll('.empty-activities');
 
 //Event Listeners
+window.addEventListener('load', renderPastActivities);
 studyBtn.addEventListener('click', toggleCatBtn);
 meditateBtn.addEventListener('click', toggleCatBtn);
 exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
 start.addEventListener('click', function(e){
   e.preventDefault();
-  // currentActivity.startTimer()
-    if (currentActivity.startTimer()) {
-      showElement(logBtn);
-    }
+   currentActivity.startTimer()
+}, {once : true});
+
+logBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  updatePastActivities();
+  renderPastActivities();
+  //put hiding in own function
+  hideElement(emptyActCommand[0]);
+  hideElement(emptyActCommand[1]);
+  hideElement(timerArea);
+  hideElement(circleBorder);
+  hideElement(formArea);
+  hideElement(logBtn);
+  showElement(activityArea);
+  showElement(startAgainBtn);
 });
-logBtn.addEventListener('click', renderPastActivities);
+
+startAgainBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  location.reload();
+});
 
 // Global
 currentActivity = {};
@@ -58,34 +77,46 @@ pastActivities = [];
 
 // Event Handlers
 function updatePastActivities() {
-pastActivities.push(currentActivity);
+var new_data = currentActivity;
+
+if(localStorage.getItem('Activities') == null){
+  localStorage.setItem('Activities', '[]');
 }
 
-function renderPastActivities(e){
-  e.preventDefault();
-  updatePastActivities();
-  var categoryColor;
-  aside.innerHTML = "";
+var old_data = JSON.parse(localStorage.getItem("Activities")); //[];
+old_data.unshift(new_data); //add new activity to the old one.
+localStorage.setItem('Activities', JSON.stringify(old_data));
+//currentActivity.saveToStorage();
+}
 
-  for (var i = 0; i < pastActivities.length; i++){
-    categoryColor = pastActivities[i].category === 'Study' ? '#B3FD78' :
-    pastActivities[i].category === 'Meditate' ? '#C278FD' :
-    pastActivities[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+function renderPastActivities(){
+  if (localStorage.getItem('Activities') != null){
+      hideElement(emptyActCommand[0]);
+      hideElement(emptyActCommand[1]);
+      var parsed = JSON.parse(localStorage.getItem('Activities'));
+      var categoryColor;
+      aside.innerHTML = "";
 
-    aside.innerHTML +=
-    `  <div class="card-holder">
+    for (var i = 0; i < parsed.length; i++){
+        categoryColor = parsed[i].category === 'Study' ? '#B3FD78' :
+        parsed[i].category === 'Meditate' ? '#C278FD' :
+        parsed[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+
+        aside.innerHTML +=
+        `  <div class="card-holder">
         <div class="log-cards">
-          <p class="category-card" id="categoryCard">${pastActivities[i].category}</p>
-          <p class="time-card">${pastActivities[i].minutes} MIN ${pastActivities[i].seconds} SECONDS ⏰</p>
-          <p class="describe-card">${pastActivities[i].description}</p>
+        <p class="category-card" id="categoryCard">${parsed[i].category}</p>
+        <p class="time-card">${parsed[i].minutes} MIN ${parsed[i].seconds} SECONDS ⏰</p>
+        <p class="describe-card">${parsed[i].description}</p>
         </div>
         <div class="color-div-container">
-          <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
+        <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
         </div>
-      </div>
-    `
+        </div>
+        `
+    }
+    showElement(cardHolder)
   }
-  showElement(cardHolder)
 }
 
 function validateForm(e){
@@ -99,7 +130,6 @@ function validateForm(e){
         setupClock();
     }
   }
-  // hideElement(logBtn);
 }
 
 function createNewActivity() {
@@ -176,7 +206,6 @@ function displayTimerColor() {
     <div class="start">
       <p class="start-complete" id="start">Start</p>
     </div>
-
   `
 }
 
@@ -199,13 +228,6 @@ function displayTimerComplete() {
 
   `
 }
-
-
-function showCompleted() {
-  showElement(logBtn);
-  displayTimerComplete()
-}
-
 function toggleCatBtn() {
   if (event.target.id === 'studyBtn') {
     studyBtn.classList.toggle('study-btn-active');
@@ -258,33 +280,3 @@ function hideElement(element) {
 function showElement(element) {
   element.classList.remove('hidden');
 }
-
-//global variables
-// pastActivities = [] THIS IS THE DATA MODEL
-
-//event listener on click of logbtn
-
-//recentActivity = new Activity(this.category, inputBoxDescription.value, inputBoxMinutes.value, inputBoxMinutes.value);
-//store as returned object into an array
-
-
-
-//takes instanstiation of the activity class and innerHTML
-// `<p class="category-card">${this.category}</p>
-// <p class="time-card">${this.minutes}</p>
-// <p class="describe-card">${this.description}</p>`
-
-//then applies css classes to them
-
-
-//corrisponding shape color??? just a box section?
-
-
-
-//ems eyes and ems eyes only
-//create a function with 3 if statements that is within the submit event handler
-//function colorTimer() {
-// if(studyBtn.checked) {
-
-//}
-//}

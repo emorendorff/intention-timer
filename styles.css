@@ -9,13 +9,11 @@ Exercise: #FD8078
 Error: #EFB7EC */
 
 * {
-    /* border: .5px solid greenyellow; */
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
 html {
-  /* height: 100%; */
   margin: 0;
   padding: 0;
 }
@@ -27,23 +25,23 @@ aside {
 }
 
 main {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    background-color: #2B2733;
-    color: #CBC9CF;
-    height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #2B2733;
+  color: #CBC9CF;
+  height: 90vh;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #46424D;
-    color: #FFF;
-    font-size: 2.5rem;
-    height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #46424D;
+  color: #FFF;
+  font-size: 2.5rem;
+  height: 10vh;
 }
 
 .grey-box-timer {
@@ -143,11 +141,11 @@ input:focus {
 }
 
 .past-activities {
-    border-left-width: 0.25rem;
-    border-left-color: #46424D;
-    border-left-style: solid;
-    width: 34vw;
-    max-height: inherit;
+  border-left-width: 0.25rem;
+  border-left-color: #46424D;
+  border-left-style: solid;
+  width: 34vw;
+  max-height: inherit;
 }
 
 .category-with-button {
@@ -180,13 +178,17 @@ input:focus {
 }
 
 input[type="submit"] {
-    border-radius: 5px;
-    margin-left: 14vw;
-    width: 12vw;
-    height: 5.5vh;
-    color: black;
-    margin-top: 2vh;
-    margin-right: 7.5vw;
+  border-radius: 5px;
+  margin-left: 14vw;
+  width: 12vw;
+  height: 5.5vh;
+  color: black;
+  margin-top: 2vh;
+  margin-right: 7.5vw;
+}
+
+#submit{
+  width: 18.5vw;
 }
 
 .category-btn {
@@ -273,6 +275,7 @@ input[type="submit"] {
   color: #CBC9CF;
   font-size: 1em;
   font-weight: bold;
+  width: 8vw;
 }
 
 .timer-area-container {
@@ -292,11 +295,9 @@ input[type="submit"] {
   background-color: transparent;
   margin: 21vw;
   height: 24vh;
-  /* max-height: inherit; */
   box-sizing: border-box;
   font-size: 1em;
   font-weight: bold;
-  /* border: .5px solid greenyellow; */
 }
 
 .study-time {
@@ -383,8 +384,7 @@ input[type="submit"] {
 }
 
 .log-activity {
-  height: 15vh;
-
+  height: 7vh;
   display: flex;
   flex-direction: row-reverse;
   padding-right: 21.55vw;
@@ -397,6 +397,20 @@ input[type="submit"] {
 .empty-activites {
   text-align: center;
 }
+
+.reset-new-activity{
+  display: flex;
+  justify-content: space-between;
+}
+
+.start-again {
+  border-radius: 10px;
+    margin-top: 2vh;
+    margin-right: 0.35vw;
+    width: 13vw;
+    height: 5vh;
+}
+
 .hidden {
   display: none;
 }
