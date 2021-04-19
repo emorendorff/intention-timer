@@ -18,6 +18,7 @@ var exerciseBtn = document.getElementById('exerciseBtn');
 var submitBtn = document.getElementById('submit');
 var categoryBtns = document.querySelectorAll('.category-btn');
 var logBtn = document.querySelector('.log-button')
+var startAgainBtn = document.querySelector('.start-again');
 
 var countDownArea = document.querySelector('.countdown');
 
@@ -47,11 +48,9 @@ exerciseBtn.addEventListener('click', toggleCatBtn);
 submitBtn.addEventListener('click', validateForm);
 start.addEventListener('click', function(e){
   e.preventDefault();
-  // currentActivity.startTimer()
-    if (currentActivity.startTimer()) {
-      showElement(logBtn);
-    }
-});
+   currentActivity.startTimer()
+}, {once : true});
+
 logBtn.addEventListener('click', function (e) {
   e.preventDefault();
   updatePastActivities();
@@ -62,7 +61,15 @@ logBtn.addEventListener('click', function (e) {
   hideElement(timerArea);
   hideElement(circleBorder);
   hideElement(formArea);
+  hideElement(logBtn);
   showElement(activityArea);
+  showElement(startAgainBtn);
+});
+
+startAgainBtn.addEventListener('click', function(e){
+  e.preventDefault();
+  //window.reload();
+  location.reload();
 });
 
 // Global
@@ -78,7 +85,7 @@ if(localStorage.getItem('Activities') == null){
 }
 
 var old_data = JSON.parse(localStorage.getItem("Activities")); //[];
-old_data.push(new_data); //add new activity to the old one.
+old_data.unshift(new_data); //add new activity to the old one.
 localStorage.setItem('Activities', JSON.stringify(old_data));
 //currentActivity.saveToStorage();
 }

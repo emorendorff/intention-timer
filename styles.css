@@ -180,13 +180,11 @@ input:focus {
 input[type="submit"] {
   border-radius: 5px;
   margin-left: 14vw;
-  width: 20vw;
+  width: 12vw;
   height: 5.5vh;
   color: black;
-  font-size: 1em;
-  font-weight: bold;
   margin-top: 2vh;
-  margin-right: 6.5vw;
+  margin-right: 7.5vw;
 }
 
 .category-btn {
@@ -269,6 +267,13 @@ input[type="submit"] {
   background-size: contain;
 }
 
+.start-btn {
+  color: #CBC9CF;
+  font-size: 1em;
+  font-weight: bold;
+  width: 8vw;
+}
+
 .timer-area-container {
   display: flex;
   flex-direction: column;
@@ -312,7 +317,7 @@ input[type="submit"] {
   margin-bottom: 34.5vh;
 }
 
-  .countdown {
+.countdown {
   font-size: 3.65em;
   padding-bottom: 18.55vh;
 }
@@ -388,6 +393,12 @@ input[type="submit"] {
 .empty-activites {
   text-align: center;
 }
+
+.reset-new-activity{
+  display: flex;
+  justify-content: space-between;
+}
+
 .hidden {
   display: none;
 }
