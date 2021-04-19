@@ -21,7 +21,8 @@ class Activity {
           clearInterval(polyclock);
           if (currentActivity.markComplete()) {
             circleBorder.innerText === "Completed, Guvna!"
-            showCompleted();
+            showElement(logBtn);
+            displayTimerComplete();
           }
         }
         countDownArea.innerHTML = `${minutes}:${seconds}`;

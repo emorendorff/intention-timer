@@ -37,6 +37,7 @@ var timeCard = document.querySelector('.time-card');
 var describeCard = document.querySelector('.describe-card');
 var cardHolder = document.querySelector('.card-holder');
 var aside = document.querySelector('aside');
+var emptyActCommand = document.querySelectorAll('.empty-activities');
 
 //Event Listeners
 window.addEventListener('load', renderPastActivities);
@@ -55,6 +56,13 @@ logBtn.addEventListener('click', function (e) {
   e.preventDefault();
   updatePastActivities();
   renderPastActivities();
+  //put hiding in own function
+  hideElement(emptyActCommand[0]);
+  hideElement(emptyActCommand[1]);
+  hideElement(timerArea);
+  hideElement(circleBorder);
+  hideElement(formArea);
+  showElement(activityArea);
 });
 
 // Global
@@ -69,61 +77,35 @@ if(localStorage.getItem('Activities') == null){
   localStorage.setItem('Activities', '[]');
 }
 
-var old_data = JSON.parse(localStorage.getItem("Activities"));
-old_data.push(new_data);
-
+var old_data = JSON.parse(localStorage.getItem("Activities")); //[];
+old_data.push(new_data); //add new activity to the old one.
 localStorage.setItem('Activities', JSON.stringify(old_data));
-// pastActivities.push()
-// //session storage
-// pastActivities.push(currentActivity);
-//localStorage
-//var old_data = JSON.parse(localStorage.getItem('data'));
-//old_data.push(new_data);
-//localStorage.setItem('Activities', JSON.stringify(pastActivities));
 //currentActivity.saveToStorage();
 }
 
-/*
-function updatePastActivities() {
-  //session storage
-  pastActivities.push(currentActivity);
-  //localStorage
-  localStorage.setItem('Activities', JSON.stringify(pastActivities))
-  //localStorage
-  // var strungActivity = JSON.stringify(currentActivity)
-  // localStorage.setItem(currentActivity.id , strungActivity);
-  //session storage
-}
-*/
-
 function renderPastActivities(){
-  //e.preventDefault();
-  //updatePastActivities();
-  // console.log(parsed);
-  // debugger;
   if (localStorage.getItem('Activities') != null){
-
-    var parsed = JSON.parse(localStorage.getItem('Activities'));
-    var categoryColor;
-    aside.innerHTML = "";
+      var parsed = JSON.parse(localStorage.getItem('Activities'));
+      var categoryColor;
+      aside.innerHTML = "";
 
     for (var i = 0; i < parsed.length; i++){
-      categoryColor = parsed[i].category === 'Study' ? '#B3FD78' :
-      parsed[i].category === 'Meditate' ? '#C278FD' :
-      parsed[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
+        categoryColor = parsed[i].category === 'Study' ? '#B3FD78' :
+        parsed[i].category === 'Meditate' ? '#C278FD' :
+        parsed[i].category === 'Exercise' ? '#FD8078' : '#EFB7EC'
 
-      aside.innerHTML +=
-      `  <div class="card-holder">
-      <div class="log-cards">
-      <p class="category-card" id="categoryCard">${parsed[i].category}</p>
-      <p class="time-card">${parsed[i].minutes} MIN ${parsed[i].seconds} SECONDS ⏰</p>
-      <p class="describe-card">${parsed[i].description}</p>
-      </div>
-      <div class="color-div-container">
-      <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
-      </div>
-      </div>
-      `
+        aside.innerHTML +=
+        `  <div class="card-holder">
+        <div class="log-cards">
+        <p class="category-card" id="categoryCard">${parsed[i].category}</p>
+        <p class="time-card">${parsed[i].minutes} MIN ${parsed[i].seconds} SECONDS ⏰</p>
+        <p class="describe-card">${parsed[i].description}</p>
+        </div>
+        <div class="color-div-container">
+        <p class="little-color" style="color: ${categoryColor}; font-size: 23px;">|</p>
+        </div>
+        </div>
+        `
     }
     showElement(cardHolder)
   }
@@ -238,13 +220,6 @@ function displayTimerComplete() {
 
   `
 }
-
-
-function showCompleted() {
-  showElement(logBtn);
-  displayTimerComplete()
-}
-
 function toggleCatBtn() {
   if (event.target.id === 'studyBtn') {
     studyBtn.classList.toggle('study-btn-active');
