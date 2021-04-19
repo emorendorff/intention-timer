@@ -42,7 +42,7 @@ class Activity {
     }
 
     localStorage.setItem('Activities', JSON.stringify(pastActivities));
-    pastActivities.push()
+    pastActivities.unshift()
   }
 
 };

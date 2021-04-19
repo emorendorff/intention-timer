@@ -68,7 +68,6 @@ logBtn.addEventListener('click', function (e) {
 
 startAgainBtn.addEventListener('click', function(e){
   e.preventDefault();
-  //window.reload();
   location.reload();
 });
 
@@ -92,6 +91,8 @@ localStorage.setItem('Activities', JSON.stringify(old_data));
 
 function renderPastActivities(){
   if (localStorage.getItem('Activities') != null){
+      hideElement(emptyActCommand[0]);
+      hideElement(emptyActCommand[1]);
       var parsed = JSON.parse(localStorage.getItem('Activities'));
       var categoryColor;
       aside.innerHTML = "";
