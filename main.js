@@ -216,7 +216,6 @@ function displayTimerColor() {
     <div class="start">
       <p class="start-complete" id="start">Start</p>
     </div>
-
   `
 }
 
