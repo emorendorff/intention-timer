@@ -53,28 +53,27 @@
               <input type="button" class="exercise-btn category-btn" id="exerciseBtn">
             </section>
           </section>
-          <p class="require hidden" id="categoryError">A category is required.</p>
+          <p class="require require-cat hidden" id="categoryError" style="color: #EFB7EC;"><img src="assets/warning.svg" alt="warning" width="18px" height="18px"> A category is required.</p>
           <form>
             <div class="accomplish">
               <label for="description">What would you like to accomplish during this time?</label>
               <input type="text" class="user-input accomplish-input" id="description" name="description">
-              <p class="require hidden" id="descriptionError">A description is required.</p>
+              <p class="require hidden" id="descriptionError" style="color: #EFB7EC;"><img src="assets/warning.svg" alt="warning" width="18px" height="18px"> A description is required.</p>
             </div>
             <div class="just-in-time">
               <div class="minutes">
                   <label for="minutes">Minutes (0-59)</label>
                 <input type="number" class="user-input" id="minutes" name="minutes" min="0" max="59">
-                <p class="require hidden" id="minutesError">Minutes are required.</p>
+                <p class="require hidden" id="minutesError" style="color: #EFB7EC;"><img src="assets/warning.svg" alt="warning" width="18px" height="18px"> Minutes are required.</p>
               </div>
               <div class="seconds">
                 <label for="seconds">Seconds</label>
                 <input type="number" class="user-input" id="seconds" name="seconds" min="0" max="59">
-                <p class="require hidden" id="secondsError">Seconds are required.</p>
+                <p class="require hidden" id="secondsError" style="color: #EFB7EC;"><img src="assets/warning.svg" alt="warning" width="18px" height="18px"> Seconds are required.</p>
               </div>
             </div>
             <div class="start-activity">
               <input type="submit" class="start-btn"value="START ACTIVITY" id="submit">
-              <p class="require hidden" id="fullError">Please fill out all categories!</p>
             </div>
           </form>
         </div>

@@ -8,7 +8,7 @@ var inputBoxSeconds = document.getElementById('seconds');
 var descriptionError = document.getElementById('descriptionError');
 var secondsError = document.getElementById('secondsError');
 var minutesError = document.getElementById('minutesError');
-var categoryError = document.getElementById('categoryError')
+var categoryError = document.getElementById('categoryError');
 
 // buttons
 var studyBtn = document.getElementById('studyBtn');
@@ -22,6 +22,7 @@ var startAgainBtn = document.querySelector('.start-again');
 var start = document.querySelector('.timer-section');
 var complete = document.getElementById('start');
 var activityDescText = document.querySelector('#activeDesc')
+var countDownArea = document.querySelector('.countdown');
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
