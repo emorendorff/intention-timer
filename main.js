@@ -9,7 +9,6 @@ var descriptionError = document.getElementById('descriptionError');
 var secondsError = document.getElementById('secondsError');
 var minutesError = document.getElementById('minutesError');
 var categoryError = document.getElementById('categoryError')
-var fullError = document.getElementById('fullError');
 
 // buttons
 var studyBtn = document.getElementById('studyBtn');
@@ -20,12 +19,9 @@ var categoryBtns = document.querySelectorAll('.category-btn');
 var logBtn = document.querySelector('.log-button')
 var startAgainBtn = document.querySelector('.start-again');
 
-var countDownArea = document.querySelector('.countdown');
-
 var start = document.querySelector('.timer-section');
 var complete = document.getElementById('start');
 var activityDescText = document.querySelector('#activeDesc')
-var deepTimer = document.getElementById('deepTimer');
 
 // screen areas
 var timerArea = document.querySelector('#timerSection');
@@ -34,8 +30,6 @@ var formArea = document.querySelector('.form-container');
 var activityArea = document.querySelector('.activity-text')
 var greyBoxTimer = document.querySelector('.grey-box');
 var categoryCard = document.querySelector('.category-card');
-var timeCard = document.querySelector('.time-card');
-var describeCard = document.querySelector('.describe-card');
 var cardHolder = document.querySelector('.card-holder');
 var aside = document.querySelector('aside');
 var emptyActCommand = document.querySelectorAll('.empty-activities');
@@ -55,15 +49,7 @@ logBtn.addEventListener('click', function (e) {
   e.preventDefault();
   updatePastActivities();
   renderPastActivities();
-  //put hiding in own function
-  hideElement(emptyActCommand[0]);
-  hideElement(emptyActCommand[1]);
-  hideElement(timerArea);
-  hideElement(circleBorder);
-  hideElement(formArea);
-  hideElement(logBtn);
-  showElement(activityArea);
-  showElement(startAgainBtn);
+  prepareNewAct();
 });
 
 startAgainBtn.addEventListener('click', function(e){
@@ -83,10 +69,9 @@ if(localStorage.getItem('Activities') == null){
   localStorage.setItem('Activities', '[]');
 }
 
-var old_data = JSON.parse(localStorage.getItem("Activities")); //[];
-old_data.unshift(new_data); //add new activity to the old one.
+var old_data = JSON.parse(localStorage.getItem("Activities"));
+old_data.unshift(new_data);
 localStorage.setItem('Activities', JSON.stringify(old_data));
-//currentActivity.saveToStorage();
 }
 
 function renderPastActivities(){
@@ -225,7 +210,6 @@ function displayTimerComplete() {
     <div class="start">
       <p class="start-complete" id="start">Completed, Guvna!</p>
     </div>
-
   `
 }
 function toggleCatBtn() {
@@ -246,8 +230,6 @@ function activateDeactivate(btn1, btn2) {
   (btn1.disabled = btn2.disabled = true) : btn1.disabled = btn2.disabled = false;
 }
 
-
-//Validating input from minutes and seconds input  boxes
 inputBoxMinutes.addEventListener("input", function() {
   this.value = this.value.replace(/[e\+\-]/gi, "");
 });
@@ -270,13 +252,25 @@ inputBoxSeconds.addEventListener("keydown", function(e) {
   }
 });
 
-//dummy functions for hide/unhide html elements
+function prepareNewAct() {
+  hideElement(emptyActCommand[0]);
+  hideElement(emptyActCommand[1]);
+  hideElement(timerArea);
+  hideElement(circleBorder);
+  hideElement(formArea);
+  hideElement(logBtn);
+  showElement(activityArea);
+  showElement(startAgainBtn);
+}
+
 function toggleElement(element) {
   element.classList.toggle('hidden');
 }
+
 function hideElement(element) {
   element.classList.add('hidden');
 }
+
 function showElement(element) {
   element.classList.remove('hidden');
 }

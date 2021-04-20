@@ -7,12 +7,11 @@ class Activity {
       this.completed =  false;
       this.id = Date.now();
   }
-  //methods
+
   startTimer() {
     if(circleBorder.innerText !== "Completed, Guvna!"){
       activityDescText.innerHTML = `${this.description}`;
       var time = (this.minutes * 60) +  this.seconds;
-  //insert function to update the time
       var polyclock = setInterval(function() {
       var minutes = Math.floor(time/ 60);
       var seconds = time % 60;
